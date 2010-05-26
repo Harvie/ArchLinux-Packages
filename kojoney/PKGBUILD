@@ -1,0 +1,32 @@
+# Contributor: Thomas Mudrunka <harvie@@email..cz>
+# You can also contact me on http://blog.harvie.cz/
+
+pkgname=kojoney
+pkgver=0.0.4.1
+pkgrel=1
+pkgdesc="Koret SSH HoneyPot."
+arch=('any')
+license=('GPL')
+url="http://kojoney.sourceforge.net/"
+depends=(
+	'openssl'
+	'bash'
+	'python'
+	#python:
+	#'twisted'
+	#optional:
+	'perl'
+)
+
+source=(
+	"http://downloads.sourceforge.net/sourceforge/${pkgname}/${pkgname}-${pkgver}.tar.gz"
+	)
+
+md5sums=(
+	'85c588498051bdfc6c69b7827cfebbfa'
+	)
+
+
+build() {
+	return 1
+}

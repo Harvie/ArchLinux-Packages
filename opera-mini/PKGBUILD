@@ -1,0 +1,26 @@
+pkgname=opera-mini
+pkgver=4.2.13337
+pkgrel=2
+arch=('any')
+pkgdesc="Opera-mini (Mobile Edition)"
+url="http://www.opera.com/mini/download"
+license=('custom')
+depends=('jre' 'microemulator')
+source=(http://mini.opera.com/global/opera-mini-$pkgver-advanced-${LANG:0:2}.jar
+	http://mini.opera.com/global/opera-mini-$pkgver-advanced-${LANG:0:2}.jad
+        opera-mini.launcher opera-mini.desktop)
+noextract=(opera-mini-$pkgver-advanced-${LANG:0:2}.jar opera-mini-$pkgver-advanced-${LANG:0:2}.jad)
+md5sums=()
+
+build() {
+  cd $srcdir
+  mkdir -p "$pkgdir"/usr/share/java/microemulator/apps/
+  install -Dm644 $srcdir/opera-mini-$pkgver-advanced-${LANG:0:2}.ja* "$pkgdir"/usr/share/java/microemulator/apps/
+  mkdir -p "$pkgdir"/usr/share/applications/
+  sed -e "s/latest/$pkgver/" -i $srcdir/opera-mini.launcher
+  sed -e "s/111language111/${LANG:0:2}/" -i $srcdir/opera-mini.launcher
+  install -Dm755 $srcdir/opera-mini.launcher "$pkgdir"/usr/bin/opera-mini
+  install -Dm644 $srcdir/opera-mini.desktop \
+    "$pkgdir"/usr/share/applications/
+
+}

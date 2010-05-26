@@ -1,0 +1,28 @@
+# Contributor: Thomas Mudrunka <harvie@@email..cz>
+# You can also contact me on http://blog.harvie.cz/
+
+pkgname=escreen
+pkgver=0.0.4
+pkgrel=1
+pkgdesc="Warcraft2 clone - now deprecated and replaced by Stratagus/Wargus. You can also play Original WarCraft 1 or 2 in DosBox."
+arch=('i686' 'x86_64')
+license=('GPL')
+url="http://www.root.cz/clanky/freecraft-the-war-begins/"
+depends=(
+	'evas-svn'
+)
+
+source=(
+	"http://dl.exactcode.de/oss/escreen/${pkgname}-${pkgver}.tar.bz2"
+)
+
+md5sums=(
+#	'ed59ac8bb45f3cb1334658f7e1570ea8'
+)
+
+
+build() {
+  mkdir -p ${pkgdir}/opt/freecraft
+
+	chmod -R 655 ${pkgdir}/
+}

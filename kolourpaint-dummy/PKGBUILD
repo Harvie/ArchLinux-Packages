@@ -1,0 +1,10 @@
+#No longer maintained!
+pkgname=kolourpaint
+pkgver=1337
+pkgrel=1
+pkgdesc="easy-to-use paint program for KDE. Obsolete dummy package - kdegraphics should be used instead"
+arch=('any')
+license=('GPL')
+url="http://kolourpaint.sourceforge.net/"
+depends=('kdegraphics')
+build() { return 0; }

@@ -1,0 +1,67 @@
+# Contributor: Thomas Mudrunka <harvie@@email..cz>
+# You can also contact me on http://blog.harvie.cz/
+
+pkgname=firefox-trunk
+pkgver=4
+pkgrel=1
+pkgdesc="Latest development version of Firefox. Also known as 'Trunk'. This can be UNSTABLE and it's only EXPERIMENTAL!"
+arch=('i686' 'x86_64')
+license=('GPL')
+url="http://www.mozilla.org/projects/minefield/"
+makedepends=(
+	'mercurial'
+	'autoconf-compat'
+	'zip' 'pkgconfig' 'diffutils' 'libgnomeui>=2.24.0' 'python' 'xorg-server'
+)
+depends=(
+	
+)
+
+source=(
+	#select one (there can be problems with some archive versions/formats):
+	"http://hg.mozilla.org/mozilla-central/archive/tip.tar.bz2"	#smallest
+	#"http://hg.mozilla.org/mozilla-central/archive/tip.tar.gz"	#small
+	#"http://hg.mozilla.org/mozilla-central/archive/tip.zip"		#biggest
+)
+
+md5sums=(
+	# md5sums are changing so quickly and i can't update the PKGBUILD so often...
+)
+
+
+build() {
+	#There is possibility to make firefox-trunk from mercurial.
+	#(need to be tuned...)
+	#cd ${srcdir}
+	#hg clone http://hg.mozilla.org/mozilla-central/ src
+	#cd ${srcdir}/src
+
+	cd ${srcdir}/mozilla-central-*
+	ls -l
+	
+	#bsdtar xf
+
+	# This was copypasted (with small differences) from:
+	#		https://developer.mozilla.org/en/Mozilla_Source_Code_(Mercurial)
+
+	# Generate a mozconfig yourself, or use this minimal default one
+	echo '. $topsrcdir/browser/config/mozconfig' > .mozconfig
+
+	# configure will be automatically generated using the 'autoconf-2.13'
+	# command, except on OS X where autoconf213 will be used.
+	# If autoconf-2.13 isn't the right name for your system, as
+	# is the case on Ubuntu Linux, use the real command name as
+	# demonstrated below.
+	echo 'mk_add_options AUTOCONF=autoconf-2.13' >> .mozconfig
+	
+	# Now do the build; configure will be run automatically
+	make -f client.mk build || return 1
+
+
+
+  mkdir -p ${pkgdir}/opt/firefox-trunk
+
+	#need instalation procedure here...
+
+	chmod -R 655 ${pkgdir}/
+}

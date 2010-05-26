@@ -1,0 +1,51 @@
+# Contributor: Thomas Mudrunka <harvie@@email..cz>
+# You can also contact me on http://blog.harvie.cz/
+
+pkgname=gpointing-device-settings
+pkgver=1.5.1
+pkgrel=2
+pkgdesc="GUI tool for setting pointing device such as TrackPoint or Touchpad. Each UI can be written as dynamic loadable module, so a third party can add its own UI. This 
+will replace GSynaptics."
+arch=('i686' 'x86_64')
+license=('GPL')
+url="http://live.gnome.org/GPointingDeviceSettings"
+depends=(
+	'gtk2' 'gconf' 'gnome-settings-daemon'
+)
+makedepends=(
+	'intltool' 'pkgconfig'
+)
+optdepends=(
+	'xf86-input-synaptics: Synaptics touchpads'
+	'libsynaptics: Synaptics touchpads'
+)
+
+source=("http://keihanna.dl.sourceforge.jp/gsynaptics/45812/${pkgname}-${pkgver}.tar.gz")
+md5sums=('1d1491473df8eabca3c15c997a975d7f')
+
+build() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+	./configure  --prefix=/usr --sysconfdir=/etc  || return 1
+	#./configure || return 1
+	make || return 1
+	make DESTDIR=${pkgdir} install || return 1
+
+	mkdir -p ${pkgdir}/usr/bin
+	cd ${pkgdir}/usr/bin
+
+	mkdir -p ${pkgdir}/usr/share/applications
+
+#	echo '[Desktop Entry]
+#Encoding=UTF-8
+#Name=gpointing-device-settings
+#Comment=Set your pointing device (such as TrackPoint or Touchpad) preferences
+#Exec=gpointing-device-settings
+##Icon=input-mouse
+#Icon=input_devices_settings
+#Terminal=false
+#Type=Application
+#StartupNotify=true
+#Categories=GNOME;GTK;Settings;HardwareSettings;Application;
+#' > ${pkgdir}/usr/share/applications/gnome-gpointing-device-settings.desktop
+
+}

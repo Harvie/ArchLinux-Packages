@@ -1,0 +1,122 @@
+# Contributor: Thomas Mudrunka <harvie@@email..cz>
+# You can also contact me on http://blog.harvie.cz/
+
+pkgname=t-mobile-4g-combi
+pkgver=1.0
+pkgrel=1
+pkgdesc=""
+arch=('any')
+license=('GPL')
+url="http://personal.jirik.net/data/tm4g/ipwireless-pcmcia-linux-howto.html"
+depends=('ppp')
+backup=('/etc/ppp/chap-secrets')
+
+build() {
+	_provider=tm4g
+
+	#directories
+  mkdir -p ${pkgdir}/etc/chatscripts
+  mkdir -p ${pkgdir}/etc/ppp/peers/
+	mkdir -p ${pkgdir}/etc/ppp/resolv/
+	mkdir -p ${pkgdir}/etc/rc.d/
+
+####################################################################
+
+echo "ABORT BUSY ABORT 'NO CARRIER' ABORT ERROR
+'' AT
+AT \"\"
+OK AT+CGDCONT=1,\"PPP\",\"internet.t-mobile.cz\",\"0,0\",0,0
+OK \"ATDT*99#\"
+CONNECT \\d\\c
+" > ${pkgdir}/etc/chatscripts/${_provider}
+
+###########################################################################
+
+echo "hide-password
+nopcomp
+noauth
+connect \"/usr/sbin/chat -v -f /etc/chatscripts/${_provider}\"
+debug
+/dev/ttyIPWp0
+230400
+defaultroute
+noipdefault
+usepeerdns
+persist
+holdoff 1
+user \"gprs\"
+ipparam tmobile
+mtu 1020
+" > ${pkgdir}/etc/ppp/peers/${_provider}
+
+###########################################################################
+
+echo '# resolv.conf created by pppconfig for tmobile
+nameserver 62.141.0.1
+nameserver 213.162.65.1
+
+' > ${pkgdir}/etc/ppp/resolv/${_provider}
+
+###########################################################################
+
+echo "[Dialer ${_provider}]
+Username = gprs
+Password = gprs
+Phone = *99#
+Stupid Mode = 1
+Init1 = ATZ
+Modem = /dev/ttyIPWp0 
+" > ${pkgdir}/etc/wvdial.conf
+
+###########################################################################
+
+echo "#!/bin/bash
+
+. /etc/rc.conf
+. /etc/rc.d/functions
+
+PID=`pidof -o %PPID /usr/sbin/pppd`
+case \"\$1\" in
+  start)
+    stat_busy \"Starting PPP daemon for ${_provider}\"
+    [ -z \"\$PID\" ] && /usr/bin/pon ${_provider}
+    if [ \$? -gt 0 ]; then
+      stat_fail
+    else
+      add_daemon ppp-${_provider}
+      stat_done
+    fi
+    ;;
+  stop)
+    stat_busy "Stopping PPP daemon"
+    [ ! -z \"\$PID\" ] && poff -a &> /dev/null
+    if [ \$? -gt 0 ]; then
+      stat_fail
+    else
+      rm_daemon ppp-${_provider}
+      stat_done
+    fi
+    ;;
+  restart)
+    \$0 stop
+    sleep 1
+    \$0 start
+    ;;
+  *)
+    echo \"usage: $0 {start|stop|restart}\"
+esac
+exit 0
+" > ${pkgdir}/etc/rc.d/ppp-${_provider}
+
+###########################################################################
+
+#Conflicting file ;(
+
+#echo '# Secrets for authentication using CHAP
+## client server secret IP addresses
+#"gprs" * "gprs"
+#' > ${pkgdir}/etc/ppp/chap-secrets
+
+
+	chmod -R 755 ${pkgdir}/
+}

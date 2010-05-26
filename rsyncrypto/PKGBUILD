@@ -1,0 +1,26 @@
+# Contributor: Thomas Mudrunka <harvie@@email..cz>
+# Maintainer: Thomas Mudrunka <harvie@@email..cz>
+# You can also contact me on http://blog.harvie.cz/
+
+pkgname=rsyncrypto
+pkgver=1.12
+pkgrel=1
+pkgdesc="Small graphical tool (based on Qt) to resize, especially magnify bitmaps in high quality. (also called SmillaEnlarger)"
+arch=('any')
+license=('GPL')
+url="http://rsyncrypto.lingnu.com/"
+depends=()
+source=("http://downloads.sourceforge.net/project/${pkgname}/${pkgname}/${pkgver}/${pkgname}-${pkgver}.tar.gz")
+md5sums=('62367d5458ceaab58bbe73030880f538')
+
+build() {
+	exit
+	cd "${srcdir}/SmillaEnlarger_${pkgver}_source/SmillaEnlargerSrc/" || return 1
+	qmake ImageEnlarger.pro || return 1
+	make || return 1
+
+  mkdir -p ${pkgdir}/usr/bin/
+	cp SmillaEnlarger ${pkgdir}/usr/bin/
+
+	chmod -R 755 ${pkgdir}
+}

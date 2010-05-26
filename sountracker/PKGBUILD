@@ -1,0 +1,20 @@
+# Contributor: Johannes Schriewer <jschriewer@arcor.de>
+
+pkgname=soundtracker
+pkgver=0.6.8.gtk2
+pkgrel=1
+pkgdesc="A pattern-oriented music tracker similar to FastTracker2 with support for jackd, oss and esd."
+arch=('i686' 'x86_64')
+license=('GPL')
+#url="http://www.soundtracker.org"
+url="http://metamorph0sis.nm.ru/"
+depends=('gtk' 'jack-audio-connection-kit' 'gdk-pixbuf' ) 
+source=(http://metamorph0sis.nm.ru/${pkgname}-${pkgver}-20080114.tar.bz2)
+md5sums=('8a2b54dc62205af6bfbe2b7e93cd36df')       
+
+build() { 
+	cd $startdir/src/$pkgname-$pkgver 
+	./configure --prefix=/usr
+	make || return 1 
+	make prefix=$startdir/pkg/usr install 
+} 

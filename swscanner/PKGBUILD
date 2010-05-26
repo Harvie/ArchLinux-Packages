@@ -1,0 +1,24 @@
+# Contributor: Thomas Mudrunka <harvie@@email..cz>
+# Original PKGBUILD contributed by: Erwin Van de Velde <erwin.vandevelde@gmail.com>
+
+pkgname=swscanner
+pkgver=0.2.2
+pkgrel=2
+pkgdesc="SWScanner is a NetStumbler like wireless network (wifi/802.11) scanner."
+arch=('i686' 'x86_64')
+url="http://www.swscanner.org"
+license="GPL"
+depends=(qt libidn acl libart-lgpl fam shapelib kdelibs kdelibs3)
+builddepends=(
+	'glibc' 'gcc'
+)
+source=(http://www.swscanner.org/descargas/$pkgname-$pkgver.tar.gz)
+md5sums=('6337ca79f295b42a256790f0133b7730')
+
+build() {
+  cd ${srcdir}/swscanner-${pkgver}
+	source /etc/profile.d/qt*.sh
+  ./configure --with-extra-includes=/usr/include/libshp --without-arts && make || return 1
+  #./configure --without-arts && make
+  make DESTDIR=${pkgdir}/usr/ install
+}

@@ -1,0 +1,468 @@
+Debug: [Main]: Setting up plugin paths... 
+Debug: [Main]: ...done. 
+Debug: [Main]: Mixxx 1.7.0 "" is starting... 
+Debug: [Main]: At current version 1.7.0 
+Debug: [Main]: ControlObject::getControl returning NULL for ( "[Mixer Profile]" , "LoEQFrequency" ) 
+Debug: [Main]: SampleRate 44100 
+Debug: [Main]: Latency 81 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new simple waveform 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0.0980392, 0.0980392, 0.0980392) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 0.803922, 0) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new simple waveform 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0.0980392, 0.0980392, 0.0980392) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 0.803922, 0) 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outline/../../ladspa_presets/." 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outline/../../ladspa_presets/.." 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outline/../../ladspa_presets/compressor.xml" 
+Debug: [Main]: LADSPA: Plugin  "Compress"  not found (required by preset  "Compressor" ) 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outline/../../ladspa_presets/delay5s.xml" 
+Debug: [Main]: LADSPA: Plugin  "delay_5s"  not found (required by preset  "Delay5s" ) 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outline/../../ladspa_presets/djflanger.xml" 
+Debug: [Main]: LADSPA: Plugin  "djFlanger"  not found (required by preset  "DJFlanger" ) 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outline/../../ladspa_presets/karaoke.xml" 
+Debug: [Main]: LADSPA: Plugin  "karaoke"  not found (required by preset  "Karaoke" ) 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outline/../../ladspa_presets/null.xml" 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outline/../../ladspa_presets/plate.xml" 
+Debug: [Main]: LADSPA: Plugin  "Plate2x2"  not found (required by preset  "PlateReverb" ) 
+Debug: [Main]: Setting up LADSPA EnableEffect "0" 
+Debug: [Main]: Key string: "EnableEffect0" 
+Debug: [Main]: Setting up LADSPA EnableEffect "1" 
+Debug: [Main]: Key string: "EnableEffect1" 
+Debug: [Main]: Setting up LADSPA EnableEffect "2" 
+Debug: [Main]: Key string: "EnableEffect2" 
+Debug: [Main]: Loading playlists and library tracks from XML... 
+Debug: [Main]: Track::readXML "/home/harvie/.mixxx/mixxxtrack.xml" 
+Debug: [Main]: playlist name "Default 1" 
+Debug: [Main]: playlist name "Default 2" 
+Debug: [Main]: Promo track directory does not exist: "/usr/share/mixxx/promo" 
+Debug: [Main]: Constructed LibraryScanner!!! 
+Debug: [Main]: FIXME: Need to tell the m_pPlaylistListModel to refresh in src/track.cpp on line: 1367 
+Debug: [Main]: Trying to add 139 songs to the library playlist 
+Debug: [Main]: Adjusting column widths: tracktable width = 100  1% of that is: 1  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: Shrinking Title/Comment for small screen...  
+Debug: [Main]: FIXME: repaintEverything switches table model and shouldn't do that when viewing the playlist model in  src/wtracktableview.cpp:  227 
+Debug: [MidiObject 1]: MidiMapping: Loading MIDI XML from "/home/harvie/.mixxx/MixxxMIDIBindings.xml" 
+Debug: [MidiObject 1]: Could not open xml file: "/home/harvie/.mixxx/MixxxMIDIBindings.xml" 
+Debug: [Main]: selectedAPI is:  "ALSA" 
+Debug: [Main]: loadSettings: 1 0 "SlowFade" 
+Debug: [Main]: slotApply crossfader: 1 "SlowFade" 
+Debug: [Main]: BpmSchemes::readXML "/home/harvie/.mixxx/mixxxbpmscheme.xml" 
+Debug: [Main]: getting midi device list, size  0  and:  "" 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outline/../../ladspa_presets/." 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outline/../../ladspa_presets/.." 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outline/../../ladspa_presets/compressor.xml" 
+Debug: [Main]: LADSPA: Plugin  "Compress"  not found (required by preset  "Compressor" ) 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outline/../../ladspa_presets/delay5s.xml" 
+Debug: [Main]: LADSPA: Plugin  "delay_5s"  not found (required by preset  "Delay5s" ) 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outline/../../ladspa_presets/djflanger.xml" 
+Debug: [Main]: LADSPA: Plugin  "djFlanger"  not found (required by preset  "DJFlanger" ) 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outline/../../ladspa_presets/karaoke.xml" 
+Debug: [Main]: LADSPA: Plugin  "karaoke"  not found (required by preset  "Karaoke" ) 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outline/../../ladspa_presets/null.xml" 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outline/../../ladspa_presets/plate.xml" 
+Debug: [Main]: LADSPA: Plugin  "Plate2x2"  not found (required by preset  "PlateReverb" ) 
+Debug: [Main]: Setting up LADSPA EnableEffect "0" 
+Debug: [Main]: Key string: "EnableEffect0" 
+Debug: [Main]: Setting up LADSPA EnableEffect "1" 
+Debug: [Main]: Key string: "EnableEffect1" 
+Debug: [Main]: Setting up LADSPA EnableEffect "2" 
+Debug: [Main]: Key string: "EnableEffect2" 
+Debug: [Main]: SoundManager::setupDevices() 
+Debug: [Main]: Building timecode lookup tables... 
+Debug: [Main]: Starting vinyl control xwax thread 
+Debug: [Main]: Building timecode lookup tables... 
+Debug: [Main]: Starting vinyl control xwax thread 
+Debug: [Main]: SoundDevicePortAudio::open() "6, plugequal" 
+Debug: [Main]: m_dSampleRate 44100 
+Debug: [Main]: iLatencyMSec: 81 
+Debug: [Main]: output channels: 2 | input channels: 0 
+Debug: [Main]: iLatencySamples: 7144 
+Debug: [Main]: iLatencyMSec: 81 
+Debug: [Main]: Opening stream with id 6 
+Debug: [Main]: Opened PortAudio stream successfully... starting 
+Debug: [Main]: Dynamically loaded PortAudio library! 
+Debug: [Main]: PortAudio: Started stream successfully 
+Debug: [Main]: iNumDevicesOpenedForOutput: 1 
+Debug: [Main]: iNumDevicesOpenedForInput: 0 
+Debug: [Main]: Displaying mixxx 
+Debug: [Main]: Adjusting column widths: tracktable width = 746  1% of that is: 7.46  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: Shrinking Title/Comment for small screen...  
+Debug: [Main]: Running Mixxx 
+Debug: [Main]: Starting Library Scanner... 
+Debug: [LibraryScanner 1]: Scan finished cleanly 
+Debug: [Main]: FIXME: repaintEverything switches table model and shouldn't do that when viewing the playlist model in  src/wtracktableview.cpp:  227 
+Debug: [Main]: Load to player1: "/home/harvie/Temp/Music/a Coisa Louca - Journey inwards.mp3" 
+Debug: [Reader 1]: file length  31362048 i 
+Debug: [AnalyserQueue 1]: AnalyserWaveform: f  44100  samplesPerDownsample:  110  downsamples  285110  from  31362048 
+Debug: [AnalyserQueue 1]: AnalyserWavesummary generation successful for  "a Coisa Louca - Journey inwards.mp3" 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Waveform downsampling finished. 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Generation took  7.09  seconds 
+Debug: [AnalyserQueue 1]: AnalyserBPM BPM detection successful for "a Coisa Louca - Journey inwards.mp3" 
+Debug: [AnalyserQueue 1]: AnalyserBPM BPM is  79.9639  (raw:  79.9639 ) 
+Debug: [Main]: Load to player2: "/home/harvie/Temp/Music/Shared/John_Holt_and_Sizzla_01_Police_In_Helicopter.mp3" 
+Debug: [Reader 2]: file length  16482816 i 
+Debug: [AnalyserQueue 1]: AnalyserWaveform: f  44100  samplesPerDownsample:  110  downsamples  149844  from  16482816 
+Debug: [AnalyserQueue 1]: AnalyserWavesummary generation successful for  "John_Holt_and_Sizzla_01_Police_In_Helicopter.mp3" 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Waveform downsampling finished. 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Generation took  4.01  seconds 
+Debug: [AnalyserQueue 1]: AnalyserBPM BPM detection successful for "John_Holt_and_Sizzla_01_Police_In_Helicopter.mp3" 
+Debug: [AnalyserQueue 1]: AnalyserBPM BPM is  77.0025  (raw:  38.5013 ) 
+Debug: [Main]: Load to player2: "/home/harvie/Temp/Music/alec_empire_-_let_the_sunshine.mp3" 
+Debug: [Reader 2]: file length  21593088 i 
+Debug: [AnalyserQueue 1]: AnalyserWaveform: f  44100  samplesPerDownsample:  110  downsamples  196300  from  21593088 
+Debug: [Main]: Load to player1: "/home/harvie/Temp/Music/alec_empire_-_let_the_sunshine.mp3" 
+Debug: [Reader 1]: file length  21593088 i 
+Debug: [AnalyserQueue 1]: AnalyserWavesummary generation successful for  "alec_empire_-_let_the_sunshine.mp3" 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Waveform downsampling finished. 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Generation took  4.76  seconds 
+Debug: [AnalyserQueue 1]: AnalyserBPM BPM detection successful for "alec_empire_-_let_the_sunshine.mp3" 
+Debug: [AnalyserQueue 1]: AnalyserBPM BPM is  136.986  (raw:  34.2465 ) 
+Debug: [Main]: BpmSchemes::readXML "/home/harvie/.mixxx/mixxxbpmscheme.xml" 
+Debug: [AnalyserQueue 2]: AnalyserBPM BPM detection failed, setting to 0. 
+Debug: [Main]: DlgBpmTap got complete signal 
+Debug: [Main]: Load to player2: "/home/harvie/Temp/Music/05 Jedna lÃÂ¡ska.mp3" 
+Debug: [Reader 2]: file length  18072576 i 
+Debug: [AnalyserQueue 1]: AnalyserWaveform: f  44100  samplesPerDownsample:  110  downsamples  164296  from  18072576 
+Debug: [AnalyserQueue 1]: AnalyserWavesummary generation successful for  "05 Jedna lÃÂ¡ska.mp3" 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Waveform downsampling finished. 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Generation took  4.29  seconds 
+Debug: [AnalyserQueue 1]: AnalyserBPM BPM detection successful for "05 Jedna lÃÂ¡ska.mp3" 
+Debug: [AnalyserQueue 1]: AnalyserBPM BPM is  106.146  (raw:  53.0732 ) 
+Debug: [Main]: Load to player1: "/home/harvie/Temp/Music/Noisia_-_Massada.mp3" 
+Debug: [Reader 1]: file length  37651968 i 
+Debug: [AnalyserQueue 1]: AnalyserWaveform: f  44100  samplesPerDownsample:  110  downsamples  342290  from  37651968 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Waveform downsampling finished. 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Generation took  7.03  seconds 
+Debug: [Main]: DlgPrefVinyl::Apply 
+Debug: [Main]: in VinylGainSlotApply() with gain: 1 
+Debug: [Main]: DlgPrefSound::Apply 
+Debug: [Main]: Setting ChannelMaster in config to:  "0" 
+Debug: [Main]: request msec  81 
+Debug: [Main]: SoundManager::setupDevices() 
+Debug: [Main]: Building timecode lookup tables... 
+Debug: [Main]: Starting vinyl control xwax thread 
+Debug: [Main]: Building timecode lookup tables... 
+Debug: [Main]: Starting vinyl control xwax thread 
+Debug: [Main]: SoundDevicePortAudio::open() "6, plugequal" 
+Debug: [Main]: m_dSampleRate 44100 
+Debug: [Main]: iLatencyMSec: 81 
+Debug: [Main]: output channels: 2 | input channels: 0 
+Debug: [Main]: iLatencySamples: 7144 
+Debug: [Main]: iLatencyMSec: 81 
+Debug: [Main]: Opening stream with id 6 
+Debug: [Main]: Opened PortAudio stream successfully... starting 
+Debug: [Main]: Dynamically loaded PortAudio library! 
+Debug: [Main]: PortAudio: Started stream successfully 
+Debug: [Main]: iNumDevicesOpenedForOutput: 1 
+Debug: [Main]: iNumDevicesOpenedForInput: 0 
+Debug: [Main]: slotApply crossfader: 1 "SlowFade" 
+Debug: [Main]: Load to player2: "/home/harvie/Temp/Music/alec_empire_-_let_the_sunshine.mp3" 
+Debug: [Reader 2]: file length  21593088 i 
+Debug: [Main]: Load to player1: "/home/harvie/Temp/Music/alec_empire_-_let_the_sunshine.mp3" 
+Debug: [Reader 1]: file length  21593088 i 
+Debug: [Main]: Load to player1: "/home/harvie/Temp/Music/02 Stay Strong.mp3" 
+Debug: [Reader 1]: file length  22046976 i 
+Debug: [AnalyserQueue 1]: AnalyserWaveform: f  44100  samplesPerDownsample:  110  downsamples  200428  from  22046976 
+Debug: [AnalyserQueue 1]: AnalyserWavesummary generation successful for  "02 Stay Strong.mp3" 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Waveform downsampling finished. 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Generation took  5.09  seconds 
+Debug: [AnalyserQueue 1]: AnalyserBPM BPM detection successful for "02 Stay Strong.mp3" 
+Debug: [AnalyserQueue 1]: AnalyserBPM BPM is  137.926  (raw:  34.4814 ) 
+Debug: [Main]: Load to player2: "/home/harvie/Temp/Music/DJ_Pooh_-_Kumatesh.mp3" 
+Debug: [Reader 2]: file length  395589888 i 
+Debug: [AnalyserQueue 1]: AnalyserWaveform: f  44100  samplesPerDownsample:  110  downsamples  3596272  from  395589888 
+Debug: [Main]: FIXME: Half-assed slotMouseDoubleClicked implementation in src/wtracktableview.cpp at line 346 
+Debug: [Main]: 0 
+Debug: [Main]: Adjusting column widths: tracktable width = 746  1% of that is: 7.46  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: Shrinking Title/Comment for small screen...  
+Debug: [Main]: BpmSchemes::readXML "/home/harvie/.mixxx/mixxxbpmscheme.xml" 
+Debug: [AnalyserQueue 1]: AnalyserWavesummary generation successful for  "DJ_Pooh_-_Kumatesh.mp3" 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Waveform downsampling finished. 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Generation took  100.63  seconds 
+Debug: [AnalyserQueue 1]: AnalyserBPM BPM detection successful for "DJ_Pooh_-_Kumatesh.mp3" 
+Debug: [AnalyserQueue 1]: AnalyserBPM BPM is  84.6977  (raw:  84.6977 ) 
+Debug: [AnalyserQueue 3]: AnalyserBPM BPM detection successful for "DJ_Pooh_-_Kumatesh.mp3" 
+Debug: [AnalyserQueue 3]: AnalyserBPM BPM is  84.6977  (raw:  84.6977 ) 
+Debug: [Main]: DlgBpmTap got complete signal 
+Debug: [Main]: BpmSchemes::readXML "/home/harvie/.mixxx/mixxxbpmscheme.xml" 
+Debug: [Main]: Load to player1: "/home/harvie/Temp/Music/05 Jedna lÃÂ¡ska.mp3" 
+Debug: [Reader 1]: file length  18072576 i 
+Debug: [Main]: Adjusting column widths: tracktable width = 746  1% of that is: 7.46  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: Shrinking Title/Comment for small screen...  
+Debug: [Main]: Load to player1: "/home/harvie/Temp/Music/The_Stranglers-Golden_Brown_(Texture_Like_Sun).mp3" 
+Debug: [Reader 1]: file length  18040320 i 
+Debug: [AnalyserQueue 1]: AnalyserWaveform: f  44100  samplesPerDownsample:  110  downsamples  164002  from  18040320 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Waveform downsampling finished. 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Generation took  3.43  seconds 
+Debug: [Main]: Load to player2: "/home/harvie/Temp/Music/alec_empire_-_let_the_sunshine.mp3" 
+Debug: [Reader 2]: file length  21593088 i 
+Debug: [Main]: Load to player2: "/home/harvie/Temp/Music/Shared/POSLECHNETE SI JUNGLE- TO OSTATNI NESTALO ZA NIC/VA-Ragga_Jungle_Dubs-RETAiL_CD-2007-R2R/08-admiral_bailey_and_mad_cobra-skin_out_(drum_and_bass_dub)-r2r.mp3" 
+Debug: [Reader 2]: file length  34352640 i 
+Debug: [AnalyserQueue 1]: AnalyserWaveform: f  44100  samplesPerDownsample:  110  downsamples  312296  from  34352640 
+Debug: [AnalyserQueue 1]: AnalyserWavesummary generation successful for  "08-admiral_bailey_and_mad_cobra-skin_out_(drum_and_bass_dub)-r2r.mp3" 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Waveform downsampling finished. 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Generation took  8.5  seconds 
+Debug: [AnalyserQueue 1]: AnalyserBPM BPM detection failed, setting to 0. 
+Debug: [Main]: Load to player2: "/home/harvie/Temp/Music/02 Stay Strong.mp3" 
+Debug: [Reader 2]: file length  22046976 i 
+Debug: [Main]: Load to player2: "/home/harvie/Temp/Music/alec_empire_-_let_the_sunshine.mp3" 
+Debug: [Reader 2]: file length  21593088 i 
+Debug: [Main]: Load to player1: "/home/harvie/Temp/Music/alec_empire_-_let_the_sunshine.mp3" 
+Debug: [Reader 1]: file length  21593088 i 
+Debug: [Main]: Load to player2: "/home/harvie/Temp/Music/Shared/POSLECHNETE SI JUNGLE- TO OSTATNI NESTALO ZA NIC/VA-Ragga_Jungle_Dubs-RETAiL_CD-2007-R2R/08-admiral_bailey_and_mad_cobra-skin_out_(drum_and_bass_dub)-r2r.mp3" 
+Debug: [Reader 2]: file length  34352640 i 
+Debug: [AnalyserQueue 1]: AnalyserBPM BPM detection failed, setting to 0. 
+Debug: [Main]: Load to player1: "/home/harvie/Temp/Music/Shared/POSLECHNETE SI JUNGLE- TO OSTATNI NESTALO ZA NIC/VA-Ragga_Jungle_Dubs-RETAiL_CD-2007-R2R/08-admiral_bailey_and_mad_cobra-skin_out_(drum_and_bass_dub)-r2r.mp3" 
+Debug: [Reader 1]: file length  34352640 i 
+Debug: [AnalyserQueue 1]: AnalyserBPM BPM detection failed, setting to 0. 
+Debug: [Main]: DlgPrefVinyl::Apply 
+Debug: [Main]: in VinylGainSlotApply() with gain: 1 
+Debug: [Main]: DlgPrefSound::Apply 
+Debug: [Main]: Setting ChannelMaster in config to:  "0" 
+Debug: [Main]: request msec  81 
+Debug: [Main]: SoundManager::setupDevices() 
+Debug: [Main]: Building timecode lookup tables... 
+Debug: [Main]: Starting vinyl control xwax thread 
+Debug: [Main]: Building timecode lookup tables... 
+Debug: [Main]: Starting vinyl control xwax thread 
+Debug: [Main]: SoundDevicePortAudio::open() "6, plugequal" 
+Debug: [Main]: m_dSampleRate 44100 
+Debug: [Main]: iLatencyMSec: 81 
+Debug: [Main]: output channels: 2 | input channels: 0 
+Debug: [Main]: iLatencySamples: 7144 
+Debug: [Main]: iLatencyMSec: 81 
+Debug: [Main]: Opening stream with id 6 
+Debug: [Main]: Opened PortAudio stream successfully... starting 
+Debug: [Main]: Dynamically loaded PortAudio library! 
+Debug: [Main]: PortAudio: Started stream successfully 
+Debug: [Main]: iNumDevicesOpenedForOutput: 1 
+Debug: [Main]: iNumDevicesOpenedForInput: 0 
+Debug: [Main]: slotApply crossfader: 1 "SlowFade" 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastBack( 1 ) 
+Debug: [Main]: slotControlFastBack( 0 ) 
+Debug: [Main]: slotControlFastBack( 1 ) 
+Debug: [Main]: slotControlFastBack( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: Load to player1: "/home/harvie/Temp/Music/02 Stay Strong.mp3" 
+Debug: [Reader 1]: file length  22046976 i 
+Debug: [Main]: Load to player2: "/home/harvie/Temp/Music/02 Stay Strong.mp3" 
+Debug: [Reader 2]: file length  22046976 i 
+Debug: [Main]: slotControlFastBack( 1 ) 
+Debug: [Main]: slotControlFastBack( 0 ) 
+Debug: [Main]: Adjusting column widths: tracktable width = 746  1% of that is: 7.46  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: Shrinking Title/Comment for small screen...  
+Debug: [Main]: Adjusting column widths: tracktable width = 746  1% of that is: 7.46  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: Shrinking Title/Comment for small screen...  
+Debug: [Main]: Load to player1: "/home/harvie/Downloads/Shared/210_tribe_of_issachar-junglist-dqm.mp3" 
+Debug: [Reader 1]: file length  15777792 i 
+Debug: [AnalyserQueue 1]: AnalyserWaveform: f  44100  samplesPerDownsample:  110  downsamples  143434  from  15777792 
+Debug: [AnalyserQueue 1]: AnalyserWavesummary generation successful for  "210_tribe_of_issachar-junglist-dqm.mp3" 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Waveform downsampling finished. 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Generation took  3.85  seconds 
+Debug: [AnalyserQueue 1]: AnalyserBPM BPM detection successful for "210_tribe_of_issachar-junglist-dqm.mp3" 
+Debug: [AnalyserQueue 1]: AnalyserBPM BPM is  87.4148  (raw:  174.83 ) 
+Debug: [Main]: Load to player1: "/home/harvie/Downloads/Shared/Bill Hicks - Dirty Jokes.mp3" 
+Debug: [Reader 1]: file length  7331328 i 
+Debug: [AnalyserQueue 1]: AnalyserWaveform: f  44100  samplesPerDownsample:  110  downsamples  66648  from  7331328 
+Debug: [AnalyserQueue 1]: AnalyserWavesummary generation successful for  "Bill Hicks - Dirty Jokes.mp3" 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Waveform downsampling finished. 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Generation took  1.85  seconds 
+Debug: [AnalyserQueue 1]: AnalyserBPM BPM detection failed, setting to 0. 
+Debug: [Main]: Load to player1: "/home/harvie/Downloads/Shared/210_tribe_of_issachar-junglist-dqm.mp3" 
+Debug: [Reader 1]: file length  15777792 i 
+Debug: [Main]: Load to player2: "/home/harvie/Downloads/Shared/gregory_isaacs-police_in_helicopter.mp3" 
+Debug: [Reader 2]: file length  18821376 i 
+Debug: [AnalyserQueue 1]: AnalyserWaveform: f  44100  samplesPerDownsample:  110  downsamples  171104  from  18821376 
+Debug: [AnalyserQueue 1]: AnalyserWavesummary generation successful for  "gregory_isaacs-police_in_helicopter.mp3" 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Waveform downsampling finished. 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Generation took  4.46  seconds 
+Debug: [AnalyserQueue 1]: AnalyserBPM BPM detection successful for "gregory_isaacs-police_in_helicopter.mp3" 
+Debug: [AnalyserQueue 1]: AnalyserBPM BPM is  73.1194  (raw:  36.5597 ) 
+Debug: [Main]: Load to player2: "/home/harvie/Downloads/Shared/Tenor_Saw-Ring_The_Alarm.mp3" 
+Debug: [Reader 2]: file length  17070336 i 
+Debug: [AnalyserQueue 1]: AnalyserWaveform: f  44100  samplesPerDownsample:  110  downsamples  155184  from  17070336 
+Debug: [AnalyserQueue 1]: AnalyserWavesummary generation successful for  "Tenor_Saw-Ring_The_Alarm.mp3" 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Waveform downsampling finished. 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Generation took  4.33  seconds 
+Debug: [AnalyserQueue 1]: AnalyserBPM BPM detection successful for "Tenor_Saw-Ring_The_Alarm.mp3" 
+Debug: [AnalyserQueue 1]: AnalyserBPM BPM is  93.1218  (raw:  186.244 ) 
+Debug: [Main]: Load to player1: "/home/harvie/Temp/Music/alec_empire_-_let_the_sunshine.mp3" 
+Debug: [Reader 1]: file length  21593088 i 
+Debug: [Main]: Load to player1: "/home/harvie/Downloads/Shared/Shinehead-Jamaican_in_New_York.mp3" 
+Debug: [Reader 1]: file length  23675904 i 
+Debug: [AnalyserQueue 1]: AnalyserWaveform: f  44100  samplesPerDownsample:  110  downsamples  215236  from  23675904 
+Debug: [AnalyserQueue 1]: AnalyserWavesummary generation successful for  "Shinehead-Jamaican_in_New_York.mp3" 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Waveform downsampling finished. 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Generation took  5.68  seconds 
+Debug: [AnalyserQueue 1]: AnalyserBPM BPM detection failed, setting to 0. 
+Debug: [Main]: slotControlFastBack( 1 ) 
+Debug: [Main]: slotControlFastBack( 0 ) 
+Debug: [Main]: slotControlFastBack( 1 ) 
+Debug: [Main]: slotControlFastBack( 0 ) 
+Debug: [Main]: slotControlFastBack( 1 ) 
+Debug: [Main]: slotControlFastBack( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: ControlObject::getControl returning NULL for ( "[Channel1]" , "temporalShape_up" ) 
+Debug: []: Midi object with null control object! 
+Debug: [Main]: ControlObject::getControl returning NULL for ( "[Channel1]" , "temporalShape_up" ) 
+Debug: []: Midi object with null control object! 
+Debug: [Main]: ControlObject::getControl returning NULL for ( "[Channel1]" , "temporalShape_up" ) 
+Debug: []: Midi object with null control object! 
+Debug: [Main]: ControlObject::getControl returning NULL for ( "[Channel1]" , "temporalShape_up" ) 
+Debug: []: Midi object with null control object! 
+Debug: [Main]: Load to player2: "/home/harvie/Temp/Music/alec_empire_-_let_the_sunshine.mp3" 
+Debug: [Reader 2]: file length  21593088 i 
+Debug: [Main]: Adjusting column widths: tracktable width = 746  1% of that is: 7.46  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: Shrinking Title/Comment for small screen...  
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: Load to player1: "/home/harvie/Temp/Music/alec_empire_-_let_the_sunshine.mp3" 
+Debug: [Reader 1]: file length  21593088 i 
+Debug: [Main]: Load to player1: "/home/harvie/Temp/Music/Bob Marley - Bad Boys.mp3" 
+Debug: [Reader 1]: file length  19141632 i 
+Debug: [AnalyserQueue 1]: AnalyserWaveform: f  44100  samplesPerDownsample:  110  downsamples  174014  from  19141632 
+Debug: [Main]: Load to player2: "/home/harvie/Temp/Music/Bob Marley - I Can See Clearly Now.mp3" 
+Debug: [Reader 2]: file length  17346816 i 
+Debug: [AnalyserQueue 1]: AnalyserWavesummary generation successful for  "Bob Marley - Bad Boys.mp3" 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Waveform downsampling finished. 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Generation took  3.92  seconds 
+Debug: [AnalyserQueue 1]: AnalyserWaveform: f  44100  samplesPerDownsample:  110  downsamples  157698  from  17346816 
+Debug: [AnalyserQueue 1]: AnalyserWavesummary generation successful for  "Bob Marley - I Can See Clearly Now.mp3" 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Waveform downsampling finished. 
+Debug: [AnalyserQueue 1]: AnalyserWaveform :: Generation took  4.13  seconds 
+Debug: [AnalyserQueue 1]: AnalyserBPM BPM detection successful for "Bob Marley - I Can See Clearly Now.mp3" 
+Debug: [AnalyserQueue 1]: AnalyserBPM BPM is  119.975  (raw:  29.9936 ) 
+Debug: [Main]: Load to player1: "/home/harvie/Temp/Music/alec_empire_-_let_the_sunshine.mp3" 
+Debug: [Reader 1]: file length  21593088 i 
+Debug: [Main]: Adjusting column widths: tracktable width = 746  1% of that is: 7.46  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: Shrinking Title/Comment for small screen...  
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 1 ) 
+Debug: [Main]: slotControlFastFwd( 0 ) 
+Debug: [Main]: Destroying MixxxApp 
+Debug: [Main]: save config,  0 
+Debug: [Main]: Write track xml,  526 
+Debug: [Main]: close soundmanager 5666 
+Debug: [Main]: soundmanager->close() done 
+Debug: [Main]: delete soundmanager,  6491 
+Debug: [Main]: delete master,  6492 
+Debug: [Main]: in ~EngineMaster() 
+Debug: [Main]: delete channel1,  6494 
+Debug: [Main]: delete channel2,  6495 
+Debug: [Main]: delete buffer1,  6495 
+Debug: [Main]: delete buffer2,  6516 
+Debug: [Main]: delete midi,  6539 
+Debug: [Main]: MidiObject: Deleting MidiMapping... 
+Debug: [Main]: MidiObject: Deleting MIDI script engine... 
+Debug: [Main]: delete view,  6978 
+Debug: [Main]: delete tracks,  7206 
+Debug: [Main]: delete config,  7392 

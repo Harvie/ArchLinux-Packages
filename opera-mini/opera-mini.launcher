@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd /usr/share/java/microemulator/
+java -jar microemulator.jar apps/opera-mini-latest-advanced-111language111.jad "$@"
+exit $?
+

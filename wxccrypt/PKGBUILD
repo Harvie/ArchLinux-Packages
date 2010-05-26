@@ -1,0 +1,28 @@
+# Contributor: Thomas Mudrunka <harvie@@email..cz>
+# You can also contact me on http://blog.harvie.cz/
+
+pkgname=wxccrypt
+pkgver=0.2
+pkgrel=1
+pkgdesc="Graphical interface for ccrypt written in wxpython."
+arch=('any')
+license=('GPL')
+url="http://projekt-dvp.s.cz/search.php?rsvelikost=sab&rstext=all-phpRS-all&rstema=14&stromhlmenu=3"
+depends=(
+	'ccrypt'
+	'wxpython'
+)
+
+source=(
+	"http://projekt-dvp.s.cz/storage/1159559979_sb_wxccrypt_v_02.tar"
+)
+
+md5sums=(
+	'3ac37a5eab099f351aaa49a4ff75d701'
+)
+
+build() {
+	mkdir -p ${pkgdir}/usr/bin
+	cp ${srcdir}/wx_ccrypt_2.py ${pkgdir}/usr/bin/wxccrypt
+	chmod -R 755 ${pkgdir}/
+}

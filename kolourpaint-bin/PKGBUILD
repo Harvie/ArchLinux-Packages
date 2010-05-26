@@ -1,0 +1,31 @@
+# Contributor: Thomas Mudrunka <harvie@@email..cz>
+
+pkgname=kolourpaint-bin
+dlpkgname=kolourpaint
+pkgver=1.2.2_kde3
+binver=3bin
+
+pkgrel=1
+pkgdesc="Binary version of simple, easy-to-use paint program for KDE. This is temporary version meant to be replaced by source version in future."
+arch=('i686')
+license=('GPL')
+url="http://kolourpaint.sourceforge.net/"
+depends=('qt3' 'kdelibs3')
+conflicts=('kolourpaint')
+provides=('kolourpaint')
+source=(http://downloads.sourceforge.net/sourceforge/kolourpaint/${dlpkgname}-${pkgver}-${binver}.tar.bz2)
+md5sums=('4b699de6a68600eee8df349b046c88ee')
+
+build() {
+  cd ${srcdir}/${dlpkgname}-${pkgver}-${binver}
+
+  mkdir -p ${pkgdir}/opt/kolourpaint
+  cp -r ${srcdir}/${dlpkgname}-${pkgver}-${binver}/* ${pkgdir}/opt/kolourpaint/	
+	chmod -R 655 ${pkgdir}/opt/kolourpaint/
+
+  mkdir -p ${pkgdir}/usr/bin
+	echo '#!/bin/sh
+	/opt/kolourpaint/kolourpaint $@' > ${pkgdir}/usr/bin/kolourpaint
+	chmod -R 655 ${pkgdir}/usr/bin/kolourpaint
+}
+

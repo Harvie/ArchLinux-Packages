@@ -1,0 +1,12 @@
+
+#!/bin/bash
+echo "Generating Exploit List, please wait"
+rm -rf sploitlist.txt
+find . -xtype f  >allfiles.txt
+for file in $(cat allfiles.txt);do
+echo $file $(head -1 $file|cut -d" " -f2-30)|grep -v CVS >>sploitlist.txt
+done
+rm allfiles.txt
+echo "Done!"
+echo 'You can "cat sploitlist.txt |grep -i exploit"'
+

@@ -1,0 +1,30 @@
+# Contributor: Thomas Mudrunka <harvie@@email..cz>
+# Maintainer: Thomas Mudrunka <harvie@@email..cz>
+# You can also contact me on http://blog.harvie.cz/
+
+pkgname=paperback
+pkgver=1
+pkgrel=2
+pkgdesc=""
+url=""
+license="GPL"
+arch=('all')
+depends=('wine' 'cups' 'sane')
+source=("http://ollydbg.de/Paperbak/PaperBak.exe")
+md5sums=()
+
+build() {
+	#Make
+	cd ${srcdir}/${pkgname}_dist/ || return 1
+	#rm -rf font.h
+	#cp -f ../font.h ./
+	make clean || return 1
+	make || return 1
+
+	#Install
+	mkdir -p ${pkgdir}/usr/bin/
+	mkdir -p ${pkgdir}/usr/share/wine/paperback
+
+	#Rights
+	chmod -R 755 ${pkgdir}/usr/bin
+}

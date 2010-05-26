@@ -1,0 +1,29 @@
+# Contributor: Thomas Mudrunka <harvie@@email..cz>
+# You can also contact me on http://blog.harvie.cz/
+
+pkgname=infector
+pkgver=0.2
+pkgrel=1
+pkgdesc="Warcraft2 clone - now deprecated and replaced by Stratagus/Wargus. You can also play Original WarCraft 1 or 2 in DosBox."
+arch=('i686' 'x86_64')
+license=('GPL')
+url=""
+depends=('libglademm' 'gtkmm')
+
+source=(
+	"http://infector.mangobrain.co.uk/downloads/${pkgname}-${pkgver}.tar.gz"
+)
+
+md5sums=(
+)
+
+
+build() {
+  #mkdir -p ${pkgdir}/opt/freecraft
+	cd "${srcdir}/${pkgname}-${pkgver}"
+
+	./configure
+	make
+
+	chmod -R 655 ${pkgdir}/
+}

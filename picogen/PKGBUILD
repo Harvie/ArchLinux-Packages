@@ -1,0 +1,55 @@
+# Contributor: Thomas Mudrunka <harvie@@email..cz>
+# You can also contact me on http://blog.harvie.cz/
+
+pkgname=picogen
+pkgver=0.2.0
+pkgrel=1
+pkgdesc="Free Terragen-like terrain generator and (monte-carlo method) ray tracer"
+arch=('i686')
+license=('GPL')
+url="http://picogen.org/"
+depends=(
+	'libtiff'
+)
+
+source=(
+	"http://picogen.org/get/current/gnu+linux/${pkgname}-${pkgver}.tar.gz"
+	)
+
+md5sums=(
+	'44fae5f72e2732e2b4a8fbfc1fe56e5b'
+	)
+
+
+build() {
+  mkdir -p "${pkgdir}/opt/picogen/"
+  mkdir -p "${pkgdir}/usr/bin/"
+  mkdir -p "${pkgdir}/usr/lib/"
+
+	cd ${srcdir}
+	rm "${pkgname}-${pkgver}.tar.gz"
+	cp -r * "${pkgdir}/opt/picogen/" || return 1
+	strip "${pkgdir}/opt/picogen/"*
+
+	ln -s /opt/picogen/picogen "${pkgdir}/usr/bin/picogen" || return 1
+	ln -s /opt/picogen/picogen-wx "${pkgdir}/usr/bin/picogen-wx" || return 1
+
+	ln -s /usr/lib/libtiff.so.3 "${pkgdir}/usr/lib/libtiff.so.4" || return 1
+	
+	chmod -R 755 "${pkgdir}/usr/"
+
+	#Desktop Launcher
+	mkdir -p ${pkgdir}/usr/share/applications
+	echo '[Desktop Entry]
+Encoding=UTF-8
+Name=PicoGen
+GenericName=PicoGen
+Comment=Terragen-like terrain generator
+Exec=/usr/bin/picogen-wx
+Icon=picogen
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=Graphics;3DGraphics;RasterGraphics;' > ${pkgdir}/usr/share/applications/picogen.desktop
+
+}

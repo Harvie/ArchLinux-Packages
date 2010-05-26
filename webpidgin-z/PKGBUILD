@@ -1,0 +1,22 @@
+# Contributor:	Thomas Mudrunka <harvie@@email..cz>
+# Maintainer:		Thomas Mudrunka <harvie@@email..cz>
+# You can also contact me on http://blog.harvie.cz/
+
+pkgname=webpidgin-z
+pkgver=2.0.z7
+pkgrel=1
+pkgdesc="Allows access to all Pidgin features over a simple http interface such as those used in mobile phones. Binary version..."
+arch=(i686)
+license=('GPL')
+url='http://www.shaorang.com/webpidginz/'
+depends=(pidgin)
+source=("http://www.shaorang.com/webpidginz/descargar.php")
+md5sums=('b8e3bd6b152b69ea9297681ad8b28002')
+
+build() {
+	mv descargar.php ${pkgname}-${pkgver}.zip || return 1
+	bsdtar xvvzf ${pkgname}-${pkgver}.zip || return 1
+	mkdir -p ${pkgdir}/usr/lib/pidgin/
+	cp webpidgin*/linux32/webpidginz.so ${pkgdir}/usr/lib/pidgin/
+	chmod -R 755 ${pkgdir}/
+}

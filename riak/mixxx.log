@@ -1,0 +1,676 @@
+Debug: [Main]: Setting up plugin paths... 
+Debug: [Main]: ...done. 
+Debug: [Main]: Mixxx 1.7.0 "" is starting... 
+Debug: [Main]: At current version 1.7.0 
+Debug: [Main]: ControlObject::getControl returning NULL for ( "[Mixer Profile]" , "LoEQFrequency" ) 
+Debug: [Main]: SampleRate 44100 
+Debug: [Main]: Latency 64 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Making new GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0.0980392, 0.0980392, 0.0980392) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 0.803922, 0) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0.0980392, 0.0980392, 0.0980392) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 0.803922, 0) 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outlineSmall/../../ladspa_presets/." 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outlineSmall/../../ladspa_presets/.." 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outlineSmall/../../ladspa_presets/compressor.xml" 
+Debug: [Main]: LADSPA: Plugin  "Compress"  not found (required by preset  "Compressor" ) 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outlineSmall/../../ladspa_presets/delay5s.xml" 
+Debug: [Main]: LADSPA: Plugin  "delay_5s"  not found (required by preset  "Delay5s" ) 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outlineSmall/../../ladspa_presets/djflanger.xml" 
+Debug: [Main]: LADSPA: Plugin  "djFlanger"  not found (required by preset  "DJFlanger" ) 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outlineSmall/../../ladspa_presets/karaoke.xml" 
+Debug: [Main]: LADSPA: Plugin  "karaoke"  not found (required by preset  "Karaoke" ) 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outlineSmall/../../ladspa_presets/null.xml" 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outlineSmall/../../ladspa_presets/plate.xml" 
+Debug: [Main]: LADSPA: Plugin  "Plate2x2"  not found (required by preset  "PlateReverb" ) 
+Debug: [Main]: Setting up LADSPA EnableEffect "0" 
+Debug: [Main]: Key string: "EnableEffect0" 
+Debug: [Main]: Setting up LADSPA EnableEffect "1" 
+Debug: [Main]: Key string: "EnableEffect1" 
+Debug: [Main]: Setting up LADSPA EnableEffect "2" 
+Debug: [Main]: Key string: "EnableEffect2" 
+Debug: [Main]: Loading playlists and library tracks from XML... 
+Debug: [Main]: Track::readXML "/home/harvie/.mixxx/mixxxtrack.xml" 
+Debug: [Main]: playlist name "Default 1" 
+Debug: [Main]: Promo track directory does not exist: "/usr/share/mixxx/promo" 
+Debug: [Main]: Constructed LibraryScanner!!! 
+Debug: [Main]: FIXME: Need to tell the m_pPlaylistListModel to refresh in src/track.cpp on line: 1367 
+Debug: [Main]: Trying to add 139 songs to the library playlist 
+Debug: [Main]: Adjusting column widths: tracktable width = 100  1% of that is: 1  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: Shrinking Title/Comment for small screen...  
+Debug: [Main]: FIXME: repaintEverything switches table model and shouldn't do that when viewing the playlist model in  src/wtracktableview.cpp:  227 
+Debug: [MidiObject 1]: MidiMapping: Loading MIDI XML from "/home/harvie/.mixxx/MixxxMIDIBindings.xml" 
+Debug: [MidiObject 1]: Could not open xml file: "/home/harvie/.mixxx/MixxxMIDIBindings.xml" 
+Debug: [Main]: selectedAPI is:  "ALSA" 
+Debug: [Main]: loadSettings: 1 0 "SlowFade" 
+Debug: [Main]: slotApply crossfader: 1 "SlowFade" 
+Debug: [Main]: BpmSchemes::readXML "/home/harvie/.mixxx/mixxxbpmscheme.xml" 
+Debug: [Main]: getting midi device list, size  0  and:  "" 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outlineSmall/../../ladspa_presets/." 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outlineSmall/../../ladspa_presets/.." 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outlineSmall/../../ladspa_presets/compressor.xml" 
+Debug: [Main]: LADSPA: Plugin  "Compress"  not found (required by preset  "Compressor" ) 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outlineSmall/../../ladspa_presets/delay5s.xml" 
+Debug: [Main]: LADSPA: Plugin  "delay_5s"  not found (required by preset  "Delay5s" ) 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outlineSmall/../../ladspa_presets/djflanger.xml" 
+Debug: [Main]: LADSPA: Plugin  "djFlanger"  not found (required by preset  "DJFlanger" ) 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outlineSmall/../../ladspa_presets/karaoke.xml" 
+Debug: [Main]: LADSPA: Plugin  "karaoke"  not found (required by preset  "Karaoke" ) 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outlineSmall/../../ladspa_presets/null.xml" 
+Debug: [Main]: LADSPA: file  "/usr/share/mixxx/skins/outlineSmall/../../ladspa_presets/plate.xml" 
+Debug: [Main]: LADSPA: Plugin  "Plate2x2"  not found (required by preset  "PlateReverb" ) 
+Debug: [Main]: Setting up LADSPA EnableEffect "0" 
+Debug: [Main]: Key string: "EnableEffect0" 
+Debug: [Main]: Setting up LADSPA EnableEffect "1" 
+Debug: [Main]: Key string: "EnableEffect1" 
+Debug: [Main]: Setting up LADSPA EnableEffect "2" 
+Debug: [Main]: Key string: "EnableEffect2" 
+Debug: [Main]: SoundManager::setupDevices() 
+Debug: [Main]: Building timecode lookup tables... 
+Debug: [Main]: Starting vinyl control xwax thread 
+Debug: [Main]: Building timecode lookup tables... 
+Debug: [Main]: Starting vinyl control xwax thread 
+Debug: [Main]: SoundDevicePortAudio::open() "6, plugequal" 
+Debug: [Main]: m_dSampleRate 44100 
+Debug: [Main]: iLatencyMSec: 64 
+Debug: [Main]: output channels: 2 | input channels: 0 
+Debug: [Main]: iLatencySamples: 5644 
+Debug: [Main]: iLatencyMSec: 64 
+Debug: [Main]: Opening stream with id 6 
+Debug: [Main]: Opened PortAudio stream successfully... starting 
+Debug: [Main]: Dynamically loaded PortAudio library! 
+Debug: [Main]: PortAudio: Started stream successfully 
+Debug: [Main]: iNumDevicesOpenedForOutput: 1 
+Debug: [Main]: iNumDevicesOpenedForInput: 0 
+Debug: [Main]: Displaying mixxx 
+Debug: [Main]: Adjusting column widths: tracktable width = 582  1% of that is: 5.82  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: Shrinking Title/Comment for small screen...  
+Debug: [Main]: Running Mixxx 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0.0980392, 0.0980392, 0.0980392) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 0.803922, 0) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0.0980392, 0.0980392, 0.0980392) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 0.803922, 0) 
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0.0980392, 0.0980392, 0.0980392) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 0.803922, 0) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0.0980392, 0.0980392, 0.0980392) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 0.803922, 0) 
+Debug: [Main]: Adjusting column widths: tracktable width = 799  1% of that is: 7.99  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: Shrinking Title/Comment for small screen...  
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 1, 1, 1) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 1, 1, 1) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: Adjusting column widths: tracktable width = 582  1% of that is: 5.82  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: Shrinking Title/Comment for small screen...  
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(AHSV 1, 0.138889, 0.470588, 0.960784) 
+Debug: [Main]: Got signalColor  QColor(AHSV 1, 0.1, 1, 0.698039) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(AHSV 1, 0.138889, 0.470588, 0.960784) 
+Debug: [Main]: Got signalColor  QColor(AHSV 1, 0.1, 1, 0.698039) 
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0.0980392, 0.0980392, 0.0980392) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 0.803922, 0) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0.0980392, 0.0980392, 0.0980392) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 0.803922, 0) 
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0.0980392, 0.0980392, 0.0980392) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0.803922, 0, 0.803922) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0.0980392, 0.0980392, 0.0980392) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0.803922, 0, 0.803922) 
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 1, 1, 1) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 1, 1, 1) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 1, 1, 1) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 1, 1, 1) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: Adjusting column widths: tracktable width = 799  1% of that is: 7.99  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: Shrinking Title/Comment for small screen...  
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 1, 1, 1) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 1, 1, 1) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: Adjusting column widths: tracktable width = 750  1% of that is: 7.5  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: Shrinking Title/Comment for small screen...  
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 1, 1, 1) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 1, 1, 1) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: Adjusting column widths: tracktable width = 746  1% of that is: 7.46  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: Shrinking Title/Comment for small screen...  
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0, 0.25098, 0) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0, 0.25098, 0) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: Adjusting column widths: tracktable width = 994  1% of that is: 9.94  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 1, 1, 1) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 1, 1, 1) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: Adjusting column widths: tracktable width = 1010  1% of that is: 10.1  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0.101961, 0.101961, 0.101961) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0.819608, 0.819608, 0.819608) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0.101961, 0.101961, 0.101961) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0.819608, 0.819608, 0.819608) 
+Debug: [Main]: Adjusting column widths: tracktable width = 1226  1% of that is: 12.26  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: DlgPrefVinyl::Apply 
+Debug: [Main]: in VinylGainSlotApply() with gain: 1 
+Debug: [Main]: DlgPrefSound::Apply 
+Debug: [Main]: Setting ChannelMaster in config to:  "0" 
+Debug: [Main]: request msec  64 
+Debug: [Main]: SoundManager::setupDevices() 
+Debug: [Main]: Building timecode lookup tables... 
+Debug: [Main]: Starting vinyl control xwax thread 
+Debug: [Main]: Building timecode lookup tables... 
+Debug: [Main]: Starting vinyl control xwax thread 
+Debug: [Main]: SoundDevicePortAudio::open() "6, plugequal" 
+Debug: [Main]: m_dSampleRate 44100 
+Debug: [Main]: iLatencyMSec: 64 
+Debug: [Main]: output channels: 2 | input channels: 0 
+Debug: [Main]: iLatencySamples: 5644 
+Debug: [Main]: iLatencyMSec: 64 
+Debug: [Main]: Opening stream with id 6 
+Debug: [Main]: Opened PortAudio stream successfully... starting 
+Debug: [Main]: Dynamically loaded PortAudio library! 
+Debug: [Main]: PortAudio: Started stream successfully 
+Debug: [Main]: iNumDevicesOpenedForOutput: 1 
+Debug: [Main]: iNumDevicesOpenedForInput: 0 
+Debug: [Main]: slotApply crossfader: 1 "SlowFade" 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0.101961, 0.101961, 0.101961) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0.819608, 0.819608, 0.819608) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0.101961, 0.101961, 0.101961) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0.819608, 0.819608, 0.819608) 
+Debug: [Main]: Adjusting column widths: tracktable width = 1226  1% of that is: 12.26  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0, 0, 0) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0, 0, 0) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: Adjusting column widths: tracktable width = 873  1% of that is: 8.73  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 1, 1, 1) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 1, 1, 1) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: Adjusting column widths: tracktable width = 746  1% of that is: 7.46  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: Shrinking Title/Comment for small screen...  
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0.101961, 0.101961, 0.101961) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0.819608, 0.819608, 0.819608) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0.101961, 0.101961, 0.101961) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0.819608, 0.819608, 0.819608) 
+Debug: [Main]: Adjusting column widths: tracktable width = 1226  1% of that is: 12.26  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0.101961, 0.101961, 0.101961) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0.819608, 0.819608, 0.819608) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0.101961, 0.101961, 0.101961) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0.819608, 0.819608, 0.819608) 
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(AHSV 1, 0.183333, 0, 0.101961) 
+Debug: [Main]: Got signalColor  QColor(AHSV 1, 0.183333, 0, 0.819608) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(AHSV 1, 0.183333, 0, 0.101961) 
+Debug: [Main]: Got signalColor  QColor(AHSV 1, 0.183333, 0, 0.819608) 
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(AHSV 1, 0.469444, 0, 0.101961) 
+Debug: [Main]: Got signalColor  QColor(AHSV 1, 0.469444, 0, 0.819608) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(AHSV 1, 0.469444, 0, 0.101961) 
+Debug: [Main]: Got signalColor  QColor(AHSV 1, 0.469444, 0, 0.819608) 
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(AHSV 1, 0.469444, 0, 0.101961) 
+Debug: [Main]: Got signalColor  QColor(AHSV 1, 0.469444, 0, 0.819608) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(AHSV 1, 0.469444, 0, 0.101961) 
+Debug: [Main]: Got signalColor  QColor(AHSV 1, 0.469444, 0, 0.819608) 
+Debug: [Main]: Adjusting column widths: tracktable width = 1226  1% of that is: 12.26  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0, 0.25098, 0) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0, 0.25098, 0) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: Adjusting column widths: tracktable width = 994  1% of that is: 9.94  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 1, 1, 1) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 1, 1, 1) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: Adjusting column widths: tracktable width = 746  1% of that is: 7.46  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: Shrinking Title/Comment for small screen...  
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 1, 1, 1) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 1, 1, 1) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: Adjusting column widths: tracktable width = 1010  1% of that is: 10.1  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0, 0, 0) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0, 0, 0) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: Adjusting column widths: tracktable width = 873  1% of that is: 8.73  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 1, 1, 1) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 1, 1, 1) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: Adjusting column widths: tracktable width = 746  1% of that is: 7.46  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: Shrinking Title/Comment for small screen...  
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0, 0.25098, 0) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0, 0.25098, 0) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: Adjusting column widths: tracktable width = 994  1% of that is: 9.94  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 1, 1, 1) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 1, 1, 1) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 1, 0) 
+Debug: [Main]: Adjusting column widths: tracktable width = 746  1% of that is: 7.46  FIXME: this should be done when initalizing the skin. 
+Debug: [Main]: Shrinking Title/Comment for small screen...  
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0.0980392, 0.0980392, 0.0980392) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 0.803922, 0) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0.0980392, 0.0980392, 0.0980392) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 0.803922, 0) 
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0.0980392, 0.0980392, 0.0980392) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0.803922, 0, 0.803922) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0.0980392, 0.0980392, 0.0980392) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0.803922, 0, 0.803922) 
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: Now in Rebootmixxview... 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0.0980392, 0.0980392, 0.0980392) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 0.803922, 0) 
+Debug: [Main]: createWaveformViewer() 
+Debug: [Main]: WaveformViewerFactory :: Creating new visual waveform 
+Debug: [Main]: WaveformViewerFactory :: Sharing existing GL context. 
+Debug: [Main]: WaveformRenderer::setupControlObjects - VisualResample:  400 
+Debug: [Main]: Got bgColor  QColor(ARGB 1, 0.0980392, 0.0980392, 0.0980392) 
+Debug: [Main]: Got signalColor  QColor(ARGB 1, 0, 0.803922, 0) 
+Debug: [Main]: rebootgui DONE 
+Debug: [Main]: SoundManager::setupDevices() 
+Debug: [Main]: Building timecode lookup tables... 
+Debug: [Main]: Starting vinyl control xwax thread 
+Debug: [Main]: Building timecode lookup tables... 
+Debug: [Main]: Starting vinyl control xwax thread 
+Debug: [Main]: SoundDevicePortAudio::open() "6, plugequal" 
+Debug: [Main]: m_dSampleRate 44100 
+Debug: [Main]: iLatencyMSec: 64 
+Debug: [Main]: output channels: 2 | input channels: 0 
+Debug: [Main]: iLatencySamples: 5644 
+Debug: [Main]: iLatencyMSec: 64 
+Debug: [Main]: Opening stream with id 6 
+Debug: [Main]: Opened PortAudio stream successfully... starting 
+Debug: [Main]: Dynamically loaded PortAudio library! 
+Debug: [Main]: PortAudio: Started stream successfully 
+Debug: [Main]: iNumDevicesOpenedForOutput: 1 
+Debug: [Main]: iNumDevicesOpenedForInput: 0 
+Debug: [Main]: DlgPrefSound::slotApplyApi 
+Debug: [Main]: SoundManager::setupDevices() 
+Debug: [Main]: Building timecode lookup tables... 
+Debug: [Main]: Starting vinyl control xwax thread 
+Debug: [Main]: Building timecode lookup tables... 
+Debug: [Main]: Starting vinyl control xwax thread 
+Debug: [Main]: SoundDevicePortAudio::open() "6, plugequal" 
+Debug: [Main]: m_dSampleRate 44100 
+Debug: [Main]: iLatencyMSec: 64 
+Debug: [Main]: output channels: 2 | input channels: 0 
+Debug: [Main]: iLatencySamples: 5644 
+Debug: [Main]: iLatencyMSec: 64 
+Debug: [Main]: Opening stream with id 6 
+Debug: [Main]: Opened PortAudio stream successfully... starting 
+Debug: [Main]: Dynamically loaded PortAudio library! 
+Debug: [Main]: PortAudio: Started stream successfully 
+Debug: [Main]: iNumDevicesOpenedForOutput: 1 
+Debug: [Main]: iNumDevicesOpenedForInput: 0 
+Debug: [Main]: SoundManager: Setting defaults 
+Debug: [Main]: DlgPrefSound::Apply 
+Debug: [Main]: Setting ChannelMaster in config to:  "0" 
+Debug: [Main]: request msec  81 
+Debug: [Main]: SoundManager::setupDevices() 
+Debug: [Main]: Building timecode lookup tables... 
+Debug: [Main]: Starting vinyl control xwax thread 
+Debug: [Main]: Building timecode lookup tables... 
+Debug: [Main]: Starting vinyl control xwax thread 
+Debug: [Main]: SoundDevicePortAudio::open() "7, dmix" 
+Debug: [Main]: m_dSampleRate 44100 
+Debug: [Main]: iLatencyMSec: 81 
+Debug: [Main]: output channels: 2 | input channels: 0 
+Debug: [Main]: iLatencySamples: 7144 
+Debug: [Main]: iLatencyMSec: 81 
+Debug: [Main]: Opening stream with id 7 
+Debug: [Main]: Error opening stream: Invalid sample rate 
+Debug: [Main]: DlgPrefVinyl::Apply 
+Debug: [Main]: in VinylGainSlotApply() with gain: 1 
+Debug: [Main]: DlgPrefSound::Apply 
+Debug: [Main]: Setting ChannelMaster in config to:  "0" 
+Debug: [Main]: request msec  81 
+Debug: [Main]: SoundManager::setupDevices() 
+Debug: [Main]: Building timecode lookup tables... 
+Debug: [Main]: Starting vinyl control xwax thread 
+Debug: [Main]: Building timecode lookup tables... 
+Debug: [Main]: Starting vinyl control xwax thread 
+Debug: [Main]: SoundDevicePortAudio::open() "6, plugequal" 
+Debug: [Main]: m_dSampleRate 44100 
+Debug: [Main]: iLatencyMSec: 81 
+Debug: [Main]: output channels: 2 | input channels: 0 
+Debug: [Main]: iLatencySamples: 7144 
+Debug: [Main]: iLatencyMSec: 81 
+Debug: [Main]: Opening stream with id 6 
+Debug: [Main]: Opened PortAudio stream successfully... starting 
+Debug: [Main]: Dynamically loaded PortAudio library! 
+Debug: [Main]: PortAudio: Started stream successfully 
+Debug: [Main]: iNumDevicesOpenedForOutput: 1 
+Debug: [Main]: iNumDevicesOpenedForInput: 0 
+Debug: [Main]: slotApply crossfader: 1 "SlowFade" 
+Debug: [Main]: FIXME: Need to tell the m_pPlaylistListModel to refresh in src/track.cpp on line: 1367 
+Debug: [Main]: FIXME: Need to tell the m_pPlaylistListModel to refresh in src/track.cpp on line: 1367 
+Debug: [Main]: Destroying MixxxApp 
+Debug: [Main]: save config,  2 
+Debug: [Main]: Write track xml,  3 
+Debug: [Main]: close soundmanager 518 
+Debug: [Main]: soundmanager->close() done 
+Debug: [Main]: delete soundmanager,  612 
+Debug: [Main]: delete master,  612 
+Debug: [Main]: in ~EngineMaster() 
+Debug: [Main]: delete channel1,  616 
+Debug: [Main]: delete channel2,  617 
+Debug: [Main]: delete buffer1,  618 
+Debug: [Main]: delete buffer2,  621 
+Debug: [Main]: delete midi,  627 
+Debug: [Main]: MidiObject: Deleting MidiMapping... 
+Debug: [Main]: MidiObject: Deleting MIDI script engine... 
+Debug: [Main]: delete view,  1352 
+Debug: [Main]: delete tracks,  1407 
+Debug: [Main]: delete config,  1434 

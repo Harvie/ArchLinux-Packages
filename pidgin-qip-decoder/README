@@ -1,0 +1,45 @@
+QIP decoder for Pidgin
+----------------------
+
+Installation and configuration
+==============================
+Copy qip-decoder.dll or qip-decoder.so to pidgin plugins directory on Windows,
+or to /usr/lib/purple-2 directory on Linux.
+In plugin settings Tools/Plugins (Ctrl+U) enable the QIP Decoder plugin.
+
+Version 1.3 allows to set codepage independently for each one contact.
+For this to work, you must create file qips.xml in
+C:\Documents and Settings\User\Application data\.purple directory on Windows,
+or in ~/.purple on Linux.
+
+Example: Most of your contacts have QIP and use codepage # 1250. Howewer, your
+contact 111222333 has QIP and is using codepage # 1252. Next contact 222333444
+has Pidgin and writes in Russian (it corresponds to the codepage # 1251).
+This contact requires disabling the QIP Decoder, which would corrupt cyrillic by
+its operation.
+
+<?xml version='1.0' encoding='UTF-8' ?>
+<qips>
+ <default enabled='1' codepage='1250' />
+ <qip uin='111222333' enabled='1' codepage='1252' />
+ <qip uin='222333444' enabled='0' />
+</qips>
+
+Source code
+===========
+Source code is now available from http://www.sedaha.cz/qip-decoder/ .
+
+Compilation
+===========
+Please follow the official Pidgin plugin instructions
+http://developer.pidgin.im/wiki/CHowTo/BasicPluginHowto and the section PLUGINS
+in README file (in Pidgin source).
+
+Simply, it says, you have to
+
+    * download and unpack Pidgin source, then
+    * ./configure,
+    * copy qip-decoder.c source file into /usr/src/pidgin-X.X.X/libpurple/plugins directory and
+    * make qip-decoder.so.
+
+Viktor Michna (viktor.michna@sedaha.cz)
