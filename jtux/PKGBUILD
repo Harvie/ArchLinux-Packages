@@ -1,11 +1,11 @@
 # Contributor:	Thomas Mudrunka <harvie@@email..cz>
-# Maintainer:		Thomas Mudrunka <harvie@@email..cz>
+# Maintainer: 	Thomas Mudrunka <harvie@@email..cz>
 # You can also contact me on http://blog.harvie.cz/
 
 pkgname=jtux
 pkgver=0.0.1
 pkgrel=1
-pkgdesc="2D action game (overhand shotgame), like Bulánci or Tuxanci."
+pkgdesc="2D action game (overhand shotgame), like Bulanci or Tuxanci."
 arch=('any')
 url="http://jtux.mgn.cz/"
 license=('GPL')
