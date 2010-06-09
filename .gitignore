@@ -1,1 +1,14 @@
+*/pkg/
+*/src/
+
+*.part
+*.tar
+*.gz
+*.xz
+*.bz
+*.bz2
+*.tgz
+*.zip
+*.rar
+
 arch-games

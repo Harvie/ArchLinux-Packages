@@ -4,6 +4,6 @@ help:
 	# - make clean
 	#
 clean:
-	rm -rf */pkg/
-	rm -rf */src/
-	find . -regextype egrep -iregex '.*\.(part|gz|xz|bz|bz2|zip|rar)$$' -print0 | xargs -0 rm -f
+	rm -rfv */pkg/
+	rm -rfv */src/
+	find . -regextype egrep -iregex '.*\.(part|tar|gz|xz|bz|bz2|tgz|zip|rar)$$' -print0 | xargs -0 rm -fv
