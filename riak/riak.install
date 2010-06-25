@@ -1,7 +1,6 @@
 iuser=riak;
 igroup="$iuser";
 ihome="/opt/$iuser";
-#iid="78";
 
 # arg 1:  the new package version
 post_install() {
@@ -16,6 +15,11 @@ post_install() {
 	chown -R "$iuser:$igroup" "$ihome"
 	#chmod -R g+rw "$ihome"
 	chmod a+x "$ihome"
+
+	ls /opt/riak/etc/*.pacnew &> /dev/null && cat <<EOS
+==> WARNING! Riak configuration (or even storage backend) may changed since
+==> the last version, you rather check http://basho.com/ for changelog...
+EOS
 }
 
 # arg 1:  the new package version
@@ -35,4 +39,3 @@ pre_remove() {
   userdel "$iuser" &> /dev/null
   groupdel "$igroup" &> /dev/null
 }
-
