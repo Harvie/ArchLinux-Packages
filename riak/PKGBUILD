@@ -15,7 +15,7 @@ backup=('opt/riak/etc/app.config' 'opt/riak/etc/vm.args')
 install="${pkgname}.install"
 source=("http://downloads.basho.com/riak/${pkgname}-${pkgbigver}/${pkgname}-${pkgver}.tar.gz" 'riak.rc')
 md5sums=('5792ac2b91ad71ccaee91d1ef9632348'
-         'd44752424e6331518a854de08fab5156')
+         '942e198d5dfa52ac36360e3f79b65930')
 prefixpath="/opt/${pkgname}"
 #prefixpath="/usr/lib/erlang"
 #prefixpath="/usr/lib/erlang/lib/${pkgname}-${pkgver}"
