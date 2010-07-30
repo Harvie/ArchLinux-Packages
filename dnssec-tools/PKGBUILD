@@ -1,0 +1,26 @@
+# Contributor:	Thomas Mudrunka <harvie@@email..cz>
+# Maintainer: 	Thomas Mudrunka <harvie@@email..cz>
+# You can also contact me on http://blog.harvie.cz/
+
+pkgname=dnssec-tools
+pkgver=1.7
+pkgrel=1
+pkgdesc="set of software tools, patches, applications, wrappers, extensions, and plugins that will help ease the deployment of DNSSEC related technologies"
+url="http://www.dnssec-tools.org/"
+license="GPL"
+arch=('i686' 'x86_64')
+depends=(perl)
+source=("http://www.dnssec-tools.org/download/${pkgname}-${pkgver}.tar.gz")
+md5sums=('f3dfe18ae50cf65594936e1684d469d0')
+
+build() {
+	cd ${srcdir}/${pkgname}-${pkgver}/ || return 1
+	./configure --prefix='' --exec_prefix=/usr\
+		--with-resolv-conf=/etc/resolv.conf\
+		--with-root-hints=none\
+		--with-ipv6\
+		--with-nsec3\
+		--with-dlv 
+	make
+	make exec_prefix=/usr | return 1
+}
