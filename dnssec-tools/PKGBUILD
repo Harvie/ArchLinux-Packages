@@ -9,7 +9,7 @@ pkgdesc="set of software tools, patches, applications, wrappers, extensions, and
 url="http://www.dnssec-tools.org/"
 license="GPL"
 arch=('i686' 'x86_64')
-depends=(perl)
+depends=(perl perl-timedate perl-net-dns perl-net-dns-sec)
 source=("http://www.dnssec-tools.org/download/${pkgname}-${pkgver}.tar.gz")
 md5sums=('f3dfe18ae50cf65594936e1684d469d0')
 
