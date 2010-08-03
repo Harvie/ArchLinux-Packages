@@ -3,7 +3,7 @@
 pkgname=perl-timedate
 pkgver=1.200.0
 pkgrel=1
-pkgdesc="CPAN package (no description found)"
+pkgdesc='time & date parsing and formatting perl library'
 arch=('i686' 'x86_64')
 url="http://search.cpan.org/dist/TimeDate/"
 license=('perl')

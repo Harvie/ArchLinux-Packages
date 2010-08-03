@@ -13,7 +13,7 @@
 pkgname=perl-digest-bubblebabble
 pkgver=0.10.0
 pkgrel=1
-pkgdesc="CPAN package (no description found)"
+pkgdesc="Digest::BubbleBabble	Create bubble-babble fingerprints"
 arch=('i686' 'x86_64')
 url="http://search.cpan.org/dist/Digest-BubbleBabble/"
 license=('unknown')
