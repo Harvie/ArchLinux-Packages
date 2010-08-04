@@ -4,8 +4,8 @@
 
 pkgname=dnssec-root-zone-trust-anchors
 pkgver=1.0
-pkgrel=2
-pkgdesc="Root Zone DNSSEC Trust Anchors"
+pkgrel=3
+pkgdesc="IANA Root Zone Trust Anchors for DNSSEC converted to various formats so they are usable by many applications."
 arch=('any')
 license=('Public Domain')
 url='https://www.iana.org/dnssec/'
