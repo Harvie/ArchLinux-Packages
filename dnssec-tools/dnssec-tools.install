@@ -2,6 +2,7 @@
 post_install() {
 	echo 'Generating default config file if not exists...'
 	while echo; do true; done 2>/dev/null | dtinitconf >/dev/null
+	touch /etc/dnssec-tools/dnsval.conf.{head,tail}
 	return 0
 }
 
