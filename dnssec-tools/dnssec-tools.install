@@ -2,6 +2,7 @@
 post_install() {
 	echo 'Generating default config file if not exists...'
 	while echo; do true; done 2>/dev/null | dtinitconf >/dev/null
+	return 0
 }
 
 # arg 1:  the new package version
