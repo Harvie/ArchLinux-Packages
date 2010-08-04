@@ -15,12 +15,32 @@ md5sums=('f3dfe18ae50cf65594936e1684d469d0')
 
 build() {
 	cd ${srcdir}/${pkgname}-${pkgver}/ || return 1
+	msg 'Configuring...'
 	./configure --prefix='' --exec_prefix=/usr\
 		--with-resolv-conf=/etc/resolv.conf\
 		--with-root-hints=none\
 		--with-ipv6\
 		--with-nsec3\
 		--with-dlv 
+
+	msg 'Fixing bugs...'
+	grep VAL_ROOT_HINTS ./validator/libval/val_policy.h	|| {
+		msg2 'fixing missing VAL_ROOT_HINTS in ./validator/libval/val_policy.h'
+		root_hints="$(grep '^VAL_ROOT_HINTS=' ./validator/config.log | head -n 1 | tr = ' ' | tr "'" '"' | sed -e 's/\//\\\//g')"
+		cat ./validator/libval/val_policy.h | sed -e 's/#include "val_parse.h"/#include "val_parse.h"\n#define '"$root_hints"'/' > tmp
+		mv tmp ./validator/libval/val_policy.h
+  }
+
+	#msg2 'fixing validator/mkinstalldirs to obey the DESTDIR'
+	##cat validator/mkinstalldirs | sed -e 's/pathcomp="$pathcomp$d"/pathcomp="$DESTDIR$pathcomp$d"/' | sed -e 's/exit $errstatus/exit 0/g' > tmp
+	#cat validator/mkinstalldirs | sed -e 's/mkdir /mkdir -p "$DESTDIR"/' > tmp
+	#mv tmp validator/mkinstalldirs
+	#chmod +x validator/mkinstalldirs
+
+	msg 'Building...'
 	make
-	make exec_prefix=/usr | return 1
+
+	msg 'Installing files to package...'
+	#export DESTDIR="${pkgdir}";
+	make -j1 install DESTDIR="${pkgdir}" mandir="/usr/share/man"
 }
