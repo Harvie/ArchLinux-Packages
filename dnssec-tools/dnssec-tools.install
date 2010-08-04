@@ -1,0 +1,15 @@
+# arg 1:  the new package version
+post_install() {
+	echo 'Generating default config file if not exists...'
+	while echo; do true; done 2>/dev/null | dtinitconf >/dev/null
+}
+
+# arg 1:  the new package version
+# arg 2:  the old package version
+post_upgrade() {
+	post_install $1
+}
+
+# arg 1:  the old package version
+pre_remove() {
+}

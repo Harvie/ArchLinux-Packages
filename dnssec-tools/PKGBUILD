@@ -7,9 +7,10 @@ pkgver=1.7
 pkgrel=1
 pkgdesc="Set of software tools, patches, applications, wrappers, extensions, and plugins that will help ease the deployment of DNSSEC related technologies"
 url="http://www.dnssec-tools.org/"
-license="GPL"
+license="Custom"
 arch=('i686' 'x86_64')
 depends=(perl perl-timedate perl-net-dns perl-net-dns-sec)
+install="${pkgname}.install"
 source=("http://www.dnssec-tools.org/download/${pkgname}-${pkgver}.tar.gz")
 md5sums=('f3dfe18ae50cf65594936e1684d469d0')
 
@@ -37,5 +38,11 @@ build() {
 	make
 
 	msg 'Installing files to package...'
-	make -j1 install DESTDIR="${pkgdir}"
+		make -j1 install DESTDIR="${pkgdir}"
+	msg2 'configuration files'
+		cp -r validator/etc/* "${pkgdir}/etc/${pkgname}/"
+		rm -rf "${pkgdir}/etc/${pkgname}/${pkgname}.conf" #will be generated in post_install
+	msg2 'license informations'
+		mkdir -p "${pkgdir}/usr/share/licenses/${pkgname}/"
+		cp COPYING "${pkgdir}/usr/share/licenses/${pkgname}/"
 }
