@@ -10,6 +10,8 @@ arch=('any')
 license=('Public Domain')
 url='https://www.iana.org/dnssec/'
 depends=(coreutils)
+_anchor_dir=/usr/share/dnssec-trust-anchors
+_root_anchor_out=root-anchor
 _root_anchor=Kjqmt7v
 source=(
 	https://data.iana.org/root-anchors/${_root_anchor}.crt
@@ -75,13 +77,36 @@ sha512sums=('b0c85c17439b3a9323390217edf72f67a91a36b509a68470543b4dc1a3cce6a7306
             'bca506c852bc83aa9d04ed0b52bef6d0baec745e466292273d52f49fd73cec73db4c6d55a9921fe086c7edc618f3ab21dc03146b6d617644495b3926e262e572')
 
 build() {
-	mkdir -p ${pkgdir}/usr/share/dnssec-trust-anchors/
+	mkdir -p ${pkgdir}${_anchor_dir}/
 	cd ${srcdir}
-	msg 'Transforming root-zone key to trusted-keys format...'
-	echo . IN DNSKEY $(wc -c ${_root_anchor}.crt | cut -d ' ' -f 1) 0 0 $(base64 -w 0 ${_root_anchor}.crt) > root-zone.key
+
+	msg 'Transforming root-zone key'
+	msg2 'to base64 format...'
+		_anchor_data="$(wc -c ${_root_anchor}.crt | cut -d ' ' -f 1) 0 0 $(base64 -w 0 ${_root_anchor}.crt)";
+		echo ${_anchor_data}
+		echo
+
+	msg2 'to trusted-keys format...'
+		echo . IN DNSKEY ${_anchor_data} | tee ${_root_anchor_out}.key
+		echo
+
+	msg2 'to dnsval.conf format...'
+		echo "# you can include this file in dnsval.conf using following directive:
+# include ${_anchor_dir}/${_root_anchor_out}.dnsval.conf
+
+: trust-anchor
+  . \"${_anchor_data}\"
+;
+
+: zone-security-expectation
+  . validate
+;" | tee ${_root_anchor_out}.dnsval.conf
+	echo
+
 	msg 'Copying files...'
-	cp -f ${srcdir}/* ${pkgdir}/usr/share/dnssec-trust-anchors/
+	cp -f ${srcdir}/* ${pkgdir}${_anchor_dir}/
+
 	msg 'Making /etc/trusted-key.key symlink...'
 	mkdir -p ${pkgdir}/etc
-	ln -s /usr/share/dnssec-trust-anchors/root-zone.key ${pkgdir}/etc/trusted-key.key
+	ln -s ${_anchor_dir}/${_root_anchor_out}.key ${pkgdir}/etc/trusted-key.key
 }
