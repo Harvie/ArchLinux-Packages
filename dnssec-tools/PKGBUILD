@@ -5,7 +5,7 @@
 pkgname=dnssec-tools
 pkgver=1.7
 pkgrel=1
-pkgdesc="set of software tools, patches, applications, wrappers, extensions, and plugins that will help ease the deployment of DNSSEC related technologies"
+pkgdesc="Set of software tools, patches, applications, wrappers, extensions, and plugins that will help ease the deployment of DNSSEC related technologies"
 url="http://www.dnssec-tools.org/"
 license="GPL"
 arch=('i686' 'x86_64')
@@ -16,7 +16,9 @@ md5sums=('f3dfe18ae50cf65594936e1684d469d0')
 build() {
 	cd ${srcdir}/${pkgname}-${pkgver}/ || return 1
 	msg 'Configuring...'
-	./configure --prefix='' --exec_prefix=/usr\
+	./configure\
+		--exec_prefix=/usr --prefix=/usr\
+		--sysconfdir=/etc --mandir=/usr/share/man\
 		--with-resolv-conf=/etc/resolv.conf\
 		--with-root-hints=none\
 		--with-ipv6\
@@ -31,16 +33,17 @@ build() {
 		mv tmp ./validator/libval/val_policy.h
   }
 
-	#msg2 'fixing validator/mkinstalldirs to obey the DESTDIR'
-	##cat validator/mkinstalldirs | sed -e 's/pathcomp="$pathcomp$d"/pathcomp="$DESTDIR$pathcomp$d"/' | sed -e 's/exit $errstatus/exit 0/g' > tmp
-	#cat validator/mkinstalldirs | sed -e 's/mkdir /mkdir -p "$DESTDIR"/' > tmp
-	#mv tmp validator/mkinstalldirs
-	#chmod +x validator/mkinstalldirs
-
 	msg 'Building...'
 	make
 
 	msg 'Installing files to package...'
 	#export DESTDIR="${pkgdir}";
-	make -j1 install DESTDIR="${pkgdir}" mandir="/usr/share/man"
+	make -j1 install DESTDIR="${pkgdir}" #exec_prefix="/usr" prefix="/usr" sysconfdir="/etc" mandir="/usr/share/man"
+
+	#msg2 'FIXME: Moving files installed to wrong place...'
+	#for dir in bin include man share; do
+	#	echo $dir;
+	#	cp -r "${pkgdir}/${dir}" "${pkgdir}/usr/" &&
+	#	rm -rf "${pkgdir}/${dir}";
+	#done;
 }
