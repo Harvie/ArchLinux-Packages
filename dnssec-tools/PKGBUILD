@@ -10,9 +10,11 @@ url="http://www.dnssec-tools.org/"
 license="Custom"
 arch=('i686' 'x86_64')
 depends=(dnssec-root-zone-trust-anchors perl perl-timedate perl-net-dns perl-net-dns-sec)
+backup=(etc/dnssec-tools/dnsval.conf.head etc/dnssec-tools/dnsval.conf.tail)
 install="${pkgname}.install"
-source=("http://www.dnssec-tools.org/download/${pkgname}-${pkgver}.tar.gz")
-md5sums=('f3dfe18ae50cf65594936e1684d469d0')
+source=("http://www.dnssec-tools.org/download/${pkgname}-${pkgver}.tar.gz" dnsval.conf)
+md5sums=('f3dfe18ae50cf65594936e1684d469d0'
+         '05656944ff9caa959591f547cfe25eba')
 
 build() {
 	cd ${srcdir}/${pkgname}-${pkgver}/ || return 1
@@ -42,6 +44,8 @@ build() {
 	msg2 'configuration files'
 		cp -r validator/etc/* "${pkgdir}/etc/${pkgname}/"
 		rm -rf "${pkgdir}/etc/${pkgname}/${pkgname}.conf" #will be generated in post_install
+		cp -f "${srcdir}/dnsval.conf" "${pkgdir}/etc/dnssec-tools/"
+		touch "${pkgdir}"/etc/dnssec-tools/dnsval.conf.{head,tail}
 	msg2 'license informations'
 		mkdir -p "${pkgdir}/usr/share/licenses/${pkgname}/"
 		cp COPYING "${pkgdir}/usr/share/licenses/${pkgname}/"
