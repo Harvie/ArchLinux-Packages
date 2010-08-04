@@ -37,13 +37,5 @@ build() {
 	make
 
 	msg 'Installing files to package...'
-	#export DESTDIR="${pkgdir}";
-	make -j1 install DESTDIR="${pkgdir}" #exec_prefix="/usr" prefix="/usr" sysconfdir="/etc" mandir="/usr/share/man"
-
-	#msg2 'FIXME: Moving files installed to wrong place...'
-	#for dir in bin include man share; do
-	#	echo $dir;
-	#	cp -r "${pkgdir}/${dir}" "${pkgdir}/usr/" &&
-	#	rm -rf "${pkgdir}/${dir}";
-	#done;
+	make -j1 install DESTDIR="${pkgdir}"
 }
