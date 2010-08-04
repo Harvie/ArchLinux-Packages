@@ -18,6 +18,11 @@ md5sums=('f3dfe18ae50cf65594936e1684d469d0'
          '03ff269fa39d2a7eb6cbe108bcea473a')
 
 build() {
+	export CFLAGS=""
+	export CXXFLAGS=""
+	export LDFLAGS=""
+	export MAKEFLAGS="-j1"
+
 	cd ${srcdir}/${pkgname}-${pkgver}/ || return 1
 	msg 'Configuring...'
 	./configure\
