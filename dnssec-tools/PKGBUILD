@@ -1,6 +1,7 @@
 # Contributor:	Thomas Mudrunka <harvie@@email..cz>
 # Maintainer: 	Thomas Mudrunka <harvie@@email..cz>
 # You can also contact me on http://blog.harvie.cz/
+# Patches welcome: http://github.com/harvie/archlinux-packages
 
 pkgname=dnssec-tools
 pkgver=1.7
@@ -14,36 +15,35 @@ backup=(etc/dnssec-tools/resolv.conf etc/dnssec-tools/root.hints)
 install="${pkgname}.install"
 source=("http://www.dnssec-tools.org/download/${pkgname}-${pkgver}.tar.gz" dnsval.conf resolv.conf)
 md5sums=('f3dfe18ae50cf65594936e1684d469d0'
-         'aaee6f50ab4abbc183f64b5de013f756'
-         '03ff269fa39d2a7eb6cbe108bcea473a')
+         '60928d281572619dfdc24c3d727c120f'
+         '8096025f849b477e4e6008b9d3dc1232')
 
 build() {
-	export CFLAGS=""
-	export CXXFLAGS=""
-	export LDFLAGS=""
-	export MAKEFLAGS="-j1"
+	#Segfaults with optimalizations...
+		export CFLAGS="-march=$CARCH -mtune=generic"
+		export CXXFLAGS="-march=$CARCH -mtune=generic"
 
 	cd ${srcdir}/${pkgname}-${pkgver}/ || return 1
 	msg 'Configuring...'
 	./configure\
 		--exec_prefix=/usr --prefix=/usr\
 		--sysconfdir=/etc --mandir=/usr/share/man\
-		--with-resolv-conf=/etc/resolv.conf\
-		--with-root-hints=none\
+		--with-resolv-conf=/dev/null\
+		--with-root-hints=/etc/dnssec-tools/root.hints\
 		--with-ipv6\
 		--with-nsec3\
 		--with-dlv 
 
 	msg 'Fixing bugs...'
-	grep VAL_ROOT_HINTS ./validator/libval/val_policy.h	|| {
-		msg2 'fixing missing VAL_ROOT_HINTS in ./validator/libval/val_policy.h'
-		root_hints="$(grep '^VAL_ROOT_HINTS=' ./validator/config.log | head -n 1 | tr = ' ' | tr "'" '"' | sed -e 's/\//\\\//g')"
-		cat ./validator/libval/val_policy.h | sed -e 's/#include "val_parse.h"/#include "val_parse.h"\n#define '"$root_hints"'/' > tmp
-		mv tmp ./validator/libval/val_policy.h
-  }
+		#grep VAL_ROOT_HINTS ./validator/libval/val_policy.h	|| {
+		#	msg2 'fixing missing VAL_ROOT_HINTS in ./validator/libval/val_policy.h'
+		#	root_hints="$(grep '^VAL_ROOT_HINTS=' ./validator/config.log | head -n 1 | tr = ' ' | tr "'" '"' | sed -e 's/\//\\\//g')"
+		#	cat ./validator/libval/val_policy.h | sed -e 's/#include "val_parse.h"/#include "val_parse.h"\n#define '"$root_hints"'/' > tmp
+		#	mv tmp ./validator/libval/val_policy.h
+		#}
 
 	msg 'Building...'
-	make
+		make -j1
 
 	msg 'Installing files to package...'
 		make -j1 install DESTDIR="${pkgdir}"
@@ -54,4 +54,8 @@ build() {
 	msg2 'license informations'
 		mkdir -p "${pkgdir}/usr/share/licenses/${pkgname}/"
 		cp COPYING "${pkgdir}/usr/share/licenses/${pkgname}/"
+
+	msg 'Cleaning...'
+		#have to do this because of some issues...
+		rm -rf "${srcdir}/"
 }
