@@ -1,0 +1,62 @@
+# Contributor:	Thomas Mudrunka <harvie@@email..cz> & jiribb <jiribb@gmail.com> & <mathieui> <mathieui@mathieui.net> & sega01
+# Maintainer: 	Thomas Mudrunka <harvie@@email..cz>
+# You can also contact me on http://blog.harvie.cz/
+# Patches welcome: http://github.com/harvie/archlinux-packages
+
+pkgname=(ldns-lib ldns-tools ldns-drill)
+_pkgname=ldns
+pkgver=1.6.5
+pkgrel=1
+pkgdesc="libldns DNSSEC enabled DNS library with Drill util (ala enabled Bind's dig)"
+arch=('i686' 'x86_64')
+url="http://www.nlnetlabs.nl/projects/ldns/"
+license=('GPL')
+groups=(network)
+depends=("openssl" "glibc")
+#options=(!libtool)
+source=(http://www.nlnetlabs.nl/downloads/$_pkgname/$_pkgname-$pkgver.tar.gz)
+md5sums=('ab41a641a0416908e03e63631f527c4a')
+
+_configflags='
+	--prefix=/usr
+	--sysconfdir=/etc
+	--localstatedir=/var
+	--enable-sha2 --disable-rpath';
+
+build() {
+	echo Will pass following flags to ./configure commands:
+	echo $_configflags;
+	return 0
+}
+
+package_ldns-lib() {
+	pkgdesc="libldns DNSSEC enabled DNS library"
+	conflicts=(ldns)
+	replaces=(ldns)
+	provides=(ldns)
+	cd "${srcdir}/$_pkgname-$pkgver"
+
+  ./configure $_configflags
+  make || return 1
+	make DESTDIR="$pkgdir/" install
+}
+
+package_ldns-tools() {
+	pkgdesc="Some DNSSEC utilities using libldns"
+	depends=(ldns-lib)
+  cd "${srcdir}/$_pkgname-$pkgver/examples"
+
+  ./configure $_configflags
+  make || return 1
+  make DESTDIR="$pkgdir/" install
+}
+
+package_ldns-drill() {
+	pkgdesc="Drill DNSSEC utility from LDNS package (ala enabled Bind's dig)"
+	depends=(ldns-lib)
+  cd "${srcdir}/$_pkgname-$pkgver/drill"
+
+  ./configure $_configflags
+  make || return 1
+  make DESTDIR="$pkgdir/" install
+}
