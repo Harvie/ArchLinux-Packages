@@ -3,9 +3,9 @@
 # You can also contact me on http://blog.harvie.cz/
 
 pkgname=anchors2keys
-pkgver=0.1
+pkgver=2010.03.31
 pkgrel=1
-pkgdesc="Takes a set of DS records, and fetches the DNSKEYs that match. Used for DNSSEC software that only accepts keys as trust anchors, rather than DS records."
+pkgdesc="Tool from ITAR.IANA. Takes a set of DS records, and fetches the DNSKEYs that match. Used for DNSSEC software that only accepts keys as trust anchors, rather than DS records."
 url="https://itar.iana.org/instructions/"
 license="BSD"
 arch=(any)
