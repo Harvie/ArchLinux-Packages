@@ -17,12 +17,12 @@ build() {
 	cd "${srcdir}/${pkgname}-${pkgver}"
 	make
 
-	mkdir -p ${pkgdir}/usr/bin/
-	cp mcelog ${pkgdir}/usr/bin/
-	cp mcelog.cron ${pkgdir}/usr/bin/
+	mkdir -p ${pkgdir}/usr/sbin/
+	cp mcelog ${pkgdir}/usr/sbin/
+	cp mcelog.cron ${pkgdir}/usr/sbin/
 
 	mkdir -p ${pkgdir}/etc/rc.d/
-	cp mcelog.init ${pkgdir}/etc/rc.d/
+	cp mcelog.init ${pkgdir}/etc/rc.d/mcelog
 
 	chmod -R 755 ${pkgdir}/
 }
