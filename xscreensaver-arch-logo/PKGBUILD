@@ -7,13 +7,13 @@
 
 pkgname=xscreensaver-arch-logo
 _original_pkgname=xscreensaver
-pkgver=5.11
+pkgver=5.12
 pkgrel=1
 pkgdesc="Screen saver and locker for the X Window System. Version with replaced art/logos/graphics to better fit to the ArchLinux (Gnome,KDE,XFCE,...). Also adds enchanced desktop icon."
 arch=('i686' 'x86_64')
 url="http://www.jwz.org/xscreensaver/"
 license=('BSD')
-depends=('libglade' 'mesa' 'pam' 'xorg-res-utils')
+depends=('libxxf86vm' 'libglade' 'mesa' 'pam' 'xorg-res-utils')
 makedepends=('bc')
 conflicts=('xscreensaver')
 provides=('xscreensaver')
@@ -21,7 +21,7 @@ backup=('etc/pam.d/xscreensaver')
 source=(http://www.jwz.org/xscreensaver/${_original_pkgname}-${pkgver}.tar.gz \
 	add-electricsheep.diff xscreensaver.pam LICENSE
 	logo-50.xpm logo-180.xpm logo-50.png logo-180.png)
-md5sums=('80f981b86734ccb31c5b3b24af3930ae'
+md5sums=('0345c1acb9280729de05c5ca44b401e3'
          'f82524626ed8a6832cd279e0548a9b46'
          '367a3538f54db71f108b34cfa31088ac'
          '5e7f3f2a63d20a484742f5b4cb5d572c'
