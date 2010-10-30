@@ -4,13 +4,18 @@
 
 pkgname=apparmor
 pkgver=2.5.1
-pkgrel=1
+pkgrel=3
 pkgdesc="Linux application security framework - mandatory access control for programs"
 arch=(i686 x86_64)
 license=(GPL)
 url='https://launchpad.net/apparmor'
-makedepends=(autoconf make gcc perl)
-#install="${pkgname}.install"
+depends=(perl perl-locale-gettext perl-term-readkey perl-rpc-xml)
+makedepends=(autoconf automake make gcc perl python2 ruby wxgtk audit)
+optdepends=('perl: many apparmor utilities' 'perl-rpc-xml: more utilities')
+provides=(apparmor-parser libapparmor apparmor-utils apparmor-profiles apparmor-notify
+	apparmor-lib apparmor-perl apparmor-python apparmor-ruby
+	apparmor-dbus apparmor-profile-editor apparmor-applet
+)
 bigver="$(echo $pkgver | cut -d . -f -2)"
 source=("http://launchpad.net/apparmor/$bigver/$pkgver/+download/apparmor-$pkgver.tar.gz")
 md5sums=('76b37656bf42fedab0d0b9d47e690a8b')
@@ -28,18 +33,20 @@ build() {
 		sed -e 's/\/usr\/bin\/prove/\/usr\/lib\/perl5\/core_perl\/bin\/prove/g' > "$patch"
 	} < "$patch"
 	patch=parser/Makefile; { rm "$patch"
-		sed -e 's/pdflatex/true/g' > "$patch"
+		sed -e 's/pdflatex/true/g' > "$patch" #just workaround until we'll get pdflatex package
 	} < "$patch"
 	echo '#!/bin/true' > parser/tst/caching.sh #Can't pass this test with current kernel
 
-	#Build
-	( cd libraries/libapparmor
-		#autoconf
-		#./configure --prefix="${pkgdir}/usr"
-		#make
-		##make install DESTDIR=${pkgdir}
-		)
+
+	#Build (these sections can be used for splitpkg in future...)
 	( cd parser
+		make
+		make install DESTDIR=${pkgdir}
+		)
+	( cd libraries/libapparmor
+		export PYTHON=/usr/bin/python2
+		./autogen.sh
+		./configure --prefix=/usr --with-perl --with-python --with-ruby
 		make
 		make install DESTDIR=${pkgdir}
 		)
@@ -47,4 +54,26 @@ build() {
 		make
 		make install DESTDIR=${pkgdir}
 		)
+	( cd profiles
+		make
+		make install DESTDIR=${pkgdir}
+		)
+	( cd deprecated/management/profile-editor
+		./macros/autogen.sh
+		./configure --prefix=/usr
+		make
+		make install DESTDIR=${pkgdir}
+		)
+	( cd deprecated/management/apparmor-dbus
+		./autogen.sh
+		./configure --prefix=/usr
+		make
+		make install DESTDIR=${pkgdir}
+		)
+	#( cd deprecated/management/applets/apparmorapplet-gnome
+	#	./autogen.sh
+	#	./configure --prefix=/usr
+	#	make
+	#	make install DESTDIR=${pkgdir}
+	#	)
 }
