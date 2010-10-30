@@ -10,7 +10,7 @@ arch=(i686 x86_64)
 license=(GPL)
 url='https://launchpad.net/apparmor'
 depends=(perl perl-locale-gettext perl-term-readkey perl-rpc-xml)
-makedepends=(autoconf automake make gcc perl python2 ruby wxgtk audit)
+makedepends=(autoconf automake make gcc swig perl python2 ruby wxgtk audit)
 optdepends=('perl: many apparmor utilities' 'perl-rpc-xml: more utilities')
 provides=(apparmor-parser libapparmor apparmor-utils apparmor-profiles apparmor-notify
 	apparmor-lib apparmor-perl apparmor-python apparmor-ruby
