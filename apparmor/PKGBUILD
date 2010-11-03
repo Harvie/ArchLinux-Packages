@@ -2,47 +2,59 @@
 # Maintainer:		Thomas Mudrunka <harvie@@email..cz>
 # You can also contact me on http://blog.harvie.cz/
 
-pkgname=apparmor
+pkgbase=apparmor
+pkgname=apparmor #AUR WORKAROUND
+true && pkgname=(apparmor-parser apparmor-libapparmor apparmor-utils apparmor-profiles)
+
 pkgver=2.5.1
-pkgrel=5
-pkgdesc="Linux application security framework - mandatory access control for programs"
+pkgrel=6
+pkgdesc='Linux application security framework - mandatory access control for programs'
 arch=(i686 x86_64)
 license=(GPL)
 url='https://launchpad.net/apparmor'
-depends=(perl perl-locale-gettext perl-term-readkey perl-file-tail perl-rpc-xml)
+groups=(apparmor)
 makedepends=(swig perl python2 ruby wxgtk audit)
-optdepends=('perl: many apparmor utilities' 'perl-rpc-xml: more utilities')
-provides=(apparmor-parser libapparmor apparmor-utils apparmor-profiles apparmor-notify
-	apparmor-lib apparmor-perl apparmor-python apparmor-ruby
-	apparmor-dbus apparmor-profile-editor apparmor-applet
-)
+optdepends=('kernel26>=2.6.36 = kernel with AppArmor support')
+
+pacman -Qi apparmor-libapparmor &>/dev/null &&
+	pkgname=(${pkgname[*]} apparmor-profile-editor apparmor-dbus) &&
+	depends=(${depends[*]} apparmor-libapparmor) &&
+	msg "Building with libapparmor dependent packages..."
+
 bigver="$(echo $pkgver | cut -d . -f -2)"
 source=("http://launchpad.net/apparmor/$bigver/$pkgver/+download/apparmor-$pkgver.tar.gz")
 md5sums=('76b37656bf42fedab0d0b9d47e690a8b')
 
+#Configuration
+export MAKEFLAGS+=' POD2MAN=/usr/lib/perl5/core_perl/bin/pod2man'
+export MAKEFLAGS+=' POD2HTML=/usr/lib/perl5/core_perl/bin/pod2html'
+export MAKEFLAGS+=' PROVE=/usr/lib/perl5/core_perl/bin/prove'
+export PYTHON='/usr/bin/python2'
+
 build() {
-	cd "${srcdir}/${pkgname}-${pkgver}"
+	export srcroot="${srcdir}/${pkgbase}-${pkgver}";
+}
 
-	msg2 'Global configuration'
-	export MAKEFLAGS+=' POD2MAN=/usr/lib/perl5/core_perl/bin/pod2man'
-	export MAKEFLAGS+=' POD2HTML=/usr/lib/perl5/core_perl/bin/pod2html'
-	export MAKEFLAGS+=' PROVE=/usr/lib/perl5/core_perl/bin/prove'
-	export PYTHON='/usr/bin/python2'
+package_apparmor-parser() {
+	pkgdesc='AppArmor parser - loads AA profiles to kernel module'
+	cd "${srcroot}/parser"; msg2 "${PWD##*/}"
 
-	msg2 'Patching...'
-	#Patch (maybe we can avoid patching by ./configuring things better)
-	patch=parser/Makefile; { rm "$patch"
-		sed -e 's/pdflatex/true/g' > "$patch" #just workaround until we'll get pdflatex package
-	} < "$patch"
-	echo '#!/bin/true' > parser/tst/caching.sh #Can't pass this test with current kernel
+  msg2 'Patching...'
+  #Patch (maybe we can avoid patching by ./configuring things better)
+  patch=Makefile; { rm "$patch"
+    sed -e 's/pdflatex/true/g' > "$patch" #just workaround until we'll get pdflatex package
+  } < "$patch"
+  echo '#!/bin/true' > tst/caching.sh #Can't pass this test with current kernel
 
+	make
+	make install DESTDIR=${pkgdir}
+}
 
-	msg 'Build (these sections can be used for splitpkg in future...)'
-	( cd parser; msg2 "${PWD##*/}"
-		make
-		make install DESTDIR=${pkgdir}
-		)
-	( cd libraries/libapparmor; msg2 "${PWD##*/}"
+package_apparmor-libapparmor() {
+	pkgdesc='AppArmor library'
+	makedepends=(swig perl python2 ruby)
+	provides=(apparmor-lib libapparmor apparmor-perl apparmor-python apparmor-ruby)
+	( cd "${srcroot}/libraries/libapparmor"; msg2 "${PWD##*/}"
 		./autogen.sh
 		./configure --prefix=/usr --with-perl --with-python --with-ruby
 		make
@@ -50,39 +62,57 @@ build() {
 		#FIXME: this file should install automatically:
 		cp swig/perl/LibAppArmor.pm ${pkgdir}/usr/lib/perl5/vendor_perl/
 		)
-	( cd utils; msg2 "${PWD##*/}"
+}
+
+package_apparmor-utils() {
+	pkgdesc='AppArmor userspace utilities'
+	depends=(perl perl-locale-gettext perl-term-readkey perl-file-tail perl-rpc-xml)
+	optdepends=('perl: many apparmor utilities' 'perl-rpc-xml: more utilities')
+	provides=(apparmor-notify);
+	( cd "${srcroot}/utils"; msg2 "${PWD##*/}"
 		make
 		make install DESTDIR=${pkgdir}
 		)
-	( cd profiles; msg2 "${PWD##*/}"
+}
+
+package_apparmor-profiles() {
+	pkgdesc='AppArmor sample pre-made profiles'
+	( cd "${srcroot}/profiles"; msg2 "${PWD##*/}"
 		make
 		make install DESTDIR=${pkgdir}
 		)
+}
 
-	#FIXME: depends on this package itself (logparse.h,...):
-	#We should build it in splitpkg with proper dependences
-	#Now you can build, install, build and install again to enable:
-	if pacman -Qi apparmor &>/dev/null; then
-
-	( cd deprecated/management/profile-editor; msg2 "${PWD##*/}"
+package_apparmor-profile-editor() {
+	pkgdesc='AppArmor profile editor using WxWidgets (or WxGTK)'
+  depends=(apparmor-libapparmor wxgtk audit)
+	( cd "${srcroot}/deprecated/management/profile-editor"; msg2 "${PWD##*/}"
 		./macros/autogen.sh
 		./configure --prefix=/usr
 		make
 		make install DESTDIR=${pkgdir}
 		)
-	( cd deprecated/management/apparmor-dbus; msg2 "${PWD##*/}"
+}
+
+package_apparmor-dbus() {
+	pkgdesc='AppArmor DBUS API'
+  depends=(apparmor-libapparmor)
+	( cd "${srcroot}/deprecated/management/apparmor-dbus"; msg2 "${PWD##*/}"
 		./autogen.sh
 		./configure --prefix=/usr
 		make
 		make install DESTDIR=${pkgdir}
 		)
-	#FIXME: can't build this:
-	#( cd deprecated/management/applets/apparmorapplet-gnome; msg2 "${PWD##*/}"
-	#	./autogen.sh
-	#	./configure --prefix=/usr
-	#	make
-	#	make install DESTDIR=${pkgdir}
-	#	)
+}
 
-	fi;
+package_apparmor-applet() {
+	pkgdesc='AppArmor Applet for Gnome'
+  depends=(apparmor-libapparmor)
+	#FIXME: can't build this:
+	( cd "${srcroot}/deprecated/management/applets/apparmorapplet-gnome"; msg2 "${PWD##*/}"
+		./autogen.sh
+		./configure --prefix=/usr
+		make
+		make install DESTDIR=${pkgdir}
+		)
 }
