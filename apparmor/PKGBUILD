@@ -3,7 +3,7 @@
 # You can also contact me on http://blog.harvie.cz/
 
 pkgbase=apparmor
-pkgname=apparmor #AUR WORKAROUND
+pkgname=apparmor
 true && pkgname=(apparmor-parser apparmor-libapparmor apparmor-utils apparmor-profiles)
 
 pkgver=2.5.1
@@ -14,10 +14,10 @@ license=(GPL)
 url='https://launchpad.net/apparmor'
 groups=(apparmor)
 makedepends=(swig perl python2 ruby wxgtk audit)
-optdepends=('kernel26>=2.6.36 = kernel with AppArmor support')
+optdepends=('kernel26>=2.6.36: kernel with AppArmor support')
 
 pacman -Qi apparmor-libapparmor &>/dev/null &&
-	pkgname=(${pkgname[*]} apparmor-profile-editor apparmor-dbus) &&
+	true && pkgname=(${pkgname[*]} apparmor-profile-editor apparmor-dbus) &&
 	depends=(${depends[*]} apparmor-libapparmor) &&
 	msg "Building with libapparmor dependent packages..."
 
