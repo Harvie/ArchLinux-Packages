@@ -5,7 +5,7 @@
 pkgname=pidgin-qip-decoder
 pkgver=1.3
 pkgrel=1
-pkgdesc="Pidgin plugin to display diacritic letters from QIP IM correctly"
+pkgdesc="Pidgin plugin to display diacritical letters from QIP IM correctly"
 arch=(i686 x86_64)
 license=('GPL')
 url='http://www.sedaha.cz/drupal/en/content/plugin-qip-decoder-for-pidgin'
