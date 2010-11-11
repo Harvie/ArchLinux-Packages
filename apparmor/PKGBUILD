@@ -8,7 +8,6 @@ true && pkgname=(apparmor-parser apparmor-libapparmor apparmor-utils apparmor-pr
 
 pkgver=2.5.1
 pkgrel=6
-pkgdesc='Linux application security framework - mandatory access control for programs'
 arch=(i686 x86_64)
 license=(GPL)
 url='https://launchpad.net/apparmor'
@@ -116,3 +115,6 @@ package_apparmor-applet() {
 		make install DESTDIR=${pkgdir}
 		)
 }
+
+#AUR hack:
+pkgdesc='Linux application security framework - mandatory access control for programs'
