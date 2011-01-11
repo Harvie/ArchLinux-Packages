@@ -2,7 +2,7 @@
 # You can also contact me on http://blog.harvie.cz/
 
 pkgname=torchat
-pkgver=0.9.9.287
+pkgver=0.9.9.425
 pkgrel=3
 pkgdesc="Messenger application on top of the Tor network and it's location hidden services. Nobody will be able to find out where you are, find out what you send/receive, to whom you are sending/receiving from and where are your contacts located. Pidgin-like."
 arch=('any')
@@ -14,14 +14,8 @@ depends=(
 	'wxpython'
 )
 
-source=(
-	"http://torchat.googlecode.com/files/${pkgname}-source-${pkgver}.zip"
-	)
-
-md5sums=(
-	'de18fb798664757e222c9f953d9c66a7'
-	)
-
+source=("http://torchat.googlecode.com/files/${pkgname}-source-${pkgver}.zip")
+md5sums=('999c6845a414933c93bbaf2d356b52d0')
 
 build() {
   mkdir -p ${pkgdir}/opt/torchat/
@@ -32,7 +26,7 @@ build() {
 
   mkdir -p ${pkgdir}/usr/bin
 	echo '#!/bin/sh
-	/opt/torchat/src/torchat.py $@' > ${pkgdir}/usr/bin/torchat	
+	/usr/bin/python2 /opt/torchat/src/torchat.py $@' > ${pkgdir}/usr/bin/torchat
 	chmod -R 655 ${pkgdir}/usr/bin/torchat
 
 
