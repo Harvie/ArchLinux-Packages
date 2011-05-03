@@ -1,0 +1,25 @@
+# Contributor: Thomas Mudrunka <harvie@@email..cz>
+# Maintainer: Thomas Mudrunka <harvie@@email..cz>
+# You can also contact me on http://blog.harvie.cz/
+
+pkgname=ssh-smart
+pkgver=0.0.1
+pkgrel=1
+pkgdesc="basic proof-of-concept of ssh identity on smartcard. The smartcard, used to store the ssh identity, is a memory card (I2C 16KBIT/2048 bytes)."
+arch=('any')
+license=('GPL')
+url="http://www.foo.be/ssh-smart/"
+depends=(perl libtowitoko2)
+source=("http://www.foo.be/ssh-smart/files/${pkgname}-${pkgver}.tar.gz")
+md5sums=('dd30f1b359b94b401e0af971f60400fe')
+
+build() {
+	return 1
+	mkdir -p ${pkgdir}/usr/bin
+
+	cd ./smartcard*/
+
+
+
+	chmod -R 755 ${pkgdir}/
+}
