@@ -4,7 +4,7 @@
 
 pkgbase=apparmor
 pkgname=apparmor
-true && pkgname=(apparmor-parser apparmor-libapparmor apparmor-utils apparmor-profiles)
+true && pkgname=(apparmor-parser apparmor-libapparmor apparmor-utils apparmor-profiles bison flex)
 
 pkgver=2.6.0
 pkgrel=1
