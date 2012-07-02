@@ -4,19 +4,19 @@
 # Patches welcome: http://github.com/harvie/archlinux-packages
 
 pkgname=dnssec-tools
-pkgver=1.7
+pkgver=1.11
 pkgrel=1
 pkgdesc="Set of software tools, patches, applications, wrappers, extensions, and plugins that will help ease the deployment of DNSSEC related technologies"
 url="http://www.dnssec-tools.org/"
 license="Custom"
 arch=('i686' 'x86_64')
-depends=(dnssec-root-zone-trust-anchors perl perl-timedate perl-net-dns perl-net-dns-sec)
+depends=(dnssec-root-zone-trust-anchors perl perl-timedate perl-net-dns perl-net-dns-sec bind)
 backup=(etc/dnssec-tools/resolv.conf etc/dnssec-tools/root.hints)
 install="${pkgname}.install"
 source=("http://www.dnssec-tools.org/download/${pkgname}-${pkgver}.tar.gz" dnsval.conf resolv.conf)
-md5sums=('f3dfe18ae50cf65594936e1684d469d0'
+md5sums=('938bcb779dd443b6dc20330a0c0b2827'
          '60928d281572619dfdc24c3d727c120f'
-         '8096025f849b477e4e6008b9d3dc1232')
+         '3620c63c50e7916272d33990f31d7d22')
 
 build() {
 	#Segfaults with optimalizations...
